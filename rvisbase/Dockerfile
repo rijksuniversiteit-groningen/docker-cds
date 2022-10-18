@@ -1,4 +1,9 @@
+# Copyright (c) University of Groningen Data Science Team
+# Distributed under the ters of the Apache License 2.0 
+
 FROM r-base:4.2.1
+
+LABEL maintainer="CDS Project"
 
 ENV CRAN_URL "http://cran.rstudio.com"
 
