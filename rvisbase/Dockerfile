@@ -1,5 +1,5 @@
 # Copyright (c) University of Groningen Data Science Team
-# Distributed under the ters of the Apache License 2.0 
+# Distributed under the terms of the Apache License 2.0 
 
 FROM r-base:4.2.1
 
