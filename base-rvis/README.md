@@ -1,5 +1,5 @@
 # R Data Visualization Image
 
-[![docker pulls](https://img.shields.io/docker/pulls/venustiano/cds.svg)](https://hub.docker.com/r/venustiano/cds)
-[![docker stars](https://img.shields.io/docker/stars/venustiano/cds.svg)](https://hub.docker.com/r/venustiano/cds)
-[![image size](https://img.shields.io/docker/image-size/venustiano/cds/rbase-4.2.1)](https://hub.docker.com/r/venustiano/cds/ "venustiano/cds image size")
+[![docker pulls](https://img.shields.io/docker/pulls/venustiano/base-rvis.svg)](https://hub.docker.com/r/venustiano/base-rvis)
+[![docker stars](https://img.shields.io/docker/stars/venustiano/base-rvis.svg)](https://hub.docker.com/r/venustiano/base-rvis)
+[![image size](https://img.shields.io/docker/image-size/venustiano/base-rvis/rbase-4.2.1)](https://hub.docker.com/r/venustiano/base-rvis/ "venustiano/base-rvis image size")
