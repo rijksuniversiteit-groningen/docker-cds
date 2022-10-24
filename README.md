@@ -1,6 +1,8 @@
 # Docker-CDS
 Docker-CDS are a set of containerized data science methods.
 
+TODO: User Guide on ReadTheDocs.
+
 ## Quick Start
 
 To run the examples below you need to have [Docker
@@ -26,13 +28,13 @@ implemented in the `R data.table` package.
 
 **Violin plots:**
 
-Download the data
+Download the data.
 
 ```bash
 wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/master/tests/testthat/data/iris.csv
 ```
 
-Store the JSON object in a `violin_params.json` file
+Store the JSON object in a `violin_params.json` file.
 
 ```json
 {
@@ -108,3 +110,5 @@ singularity build pcr.sif docker://venustiano/cds:rvispack-0.1.0
 ./pcr.sif
 ./pcr.sif c_violin mpg_params.json
 ```
+
+## Contributing
