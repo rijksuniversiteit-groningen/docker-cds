@@ -55,6 +55,8 @@ docker run --rm -v ${PWD}:/app/data venustiano/cds:rvispack-0.1.0 c_violin violi
 will produce a violin plot in the `Rplots.pdf` file.
 
 
+![alt violin plot](./docs/source/pics/Rplots.pdf.png)
+
 ### Another example
 
 ```json
@@ -88,6 +90,7 @@ wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/mast
 #### Create the visualization
 
 ```bash
-docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 violin mpg_params.json
-
+docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_violin mpg_params.json
 ```
+
+![alt mpgviolin](docs/source/pics/ggplotmpg.csv-violin-20221009_203930.png)
