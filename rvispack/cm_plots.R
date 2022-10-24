@@ -2,22 +2,22 @@
 args = commandArgs(trailingOnly=TRUE)
 
 # Copyright (c) University of Groningen Data Science Team
-# Distributed under the terms of the Apache License 2.0 
+# Distributed under the terms of the Apache License 2.0
 
-library(pcaprojection)
+library(rvispack)
 
 # test if there are at least two arguments: if not, return an error
 if (length(args)==0) {
-  stop("Both 'plot type' and a 'json file' arguments are needed", call.=FALSE)
+  help(package=rvispack)
 } else if (length(args)>=2) {
   plottype <- args[1]
   parameters <- args[2]
 
   if (parameters == "help")
      switch( plottype,
-          "histogram" = ?histogram,
-          "violin" =    ?cm_ggviolin,
-          "pca" = ?pcaproj,
+          "c_histogram" = ?c_histogram,
+          "c_violin" =    ?c_violin,
+          "c_pcaproj" = ?c_pcaproj,
 	  cat(paste0("'",plottype,"' plot is not found in this package"))
 	  )
   else {
@@ -26,20 +26,20 @@ if (length(args)==0) {
     lparams <- validate_json_file(parameters)
 
     switch( plottype,
-          "histogram" = {
+          "c_histogram" = {
                           # validating the parameters against the histogram json schema
                           validate_parameters(parameters,pschema="histogram_schema.json")
-                          histogram(lparams)
+                          c_histogram(lparams)
                         },
-          "violin" = {
+          "c_violin" = {
                        # validating the parameters against the violin json schema
                        validate_parameters(parameters,pschema="violin_schema.json")
-                       cm_ggviolin(lparams)
+                       c_violin(lparams)
                      },
-          "pca" =  {
+          "c_pcaproj" =  {
                     # validating parameters against the pca json schema
                     validate_parameters(lparams)
-                    pcaproj(parameters)
+                    c_pcaproj(parameters)
                   },
           cat(paste0("'",plottype,"' plot is not found in this package"))
           )
