@@ -7,7 +7,7 @@
    :parser: myst_parser.sphinx_
    
    
-Docker-cds Containerized Data Science Methods
+Docker-cds Containerized Data Science
 =============================================
 
 

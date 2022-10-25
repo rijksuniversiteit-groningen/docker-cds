@@ -1,7 +1,10 @@
 # Docker-CDS
 Docker-CDS are a set of containerized data science methods.
 
-TODO: User Guide on ReadTheDocs.
+The [User Guide on
+ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/index.html)
+provides the latest documentation of the containerized data science
+methods.
 
 ## Quick Start
 
