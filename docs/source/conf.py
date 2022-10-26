@@ -24,5 +24,25 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
 html_static_path = ['_static']
+
+html_theme = "sphinx_book_theme"
+html_title = "Docker-CDS documentation"
+html_logo = "_static/twitter_icon_300px_wit.jpg"
+html_theme_options = {
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/rijksuniversiteit-groningen/docker-cds",
+    "repository_branch": "main",
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+}
+
+extensions = ["myst_parser", "sphinx_copybutton"]
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
+pygments_style = "sphinx"

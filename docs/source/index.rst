@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to docker-cds's documentation!
-======================================
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
+   
+   
+Docker-cds Containerized Data Science
+=============================================
 
 
 .. note::
@@ -12,14 +16,16 @@ Welcome to docker-cds's documentation!
    This project is under active development.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
+   using/visualization/rvispack
 
+	     
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
