@@ -20,5 +20,5 @@ ENTRYPOINT ["Rscript","/app/bin/c_gene.R"]
 CMD []
 
 # docker build --no-cache -t genenettools .
-# docker tag rvispack:latest venustiano/cds:genenettools-0.1.0
+# docker tag genenettools:latest venustiano/cds:genenettools-0.1.0
 # docker push venustiano/cds:genenettools-0.1.0
