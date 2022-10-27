@@ -74,16 +74,29 @@ The `names` in the JSON file are between double quotes and the
 description of the `values` are between angle brackets. This
 description include the data types as defined in the `JSON
 <https://www.json.org/json-en.html>`_ format. Below is an example of
-valid JSON file.
+valid JSON file (`pca_iris_params.json`).
 ::
    {
-     "filename": "iris.csv",
-     "colour": "variety",
-     "scale": true,
-     "biplot": true,
-     "title": "Iris PCA projection"
+       "filename": "iris.csv",
+       "col_ids":["sepal_length","sepal_width","petal_length","petal_width","species"],
+       "colour": "species",
+       "scale": true,
+       "biplot": true,
+       "height": 10,
+       "width": 15,
+       "title": "Iris PCA projection",
+       "save":true,
+       "device":"png",
+       "interactive":false
    }
 
+To create the projection run::
+
+  docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_pcaproj pca_iris_params.json
+
+.. image:: _static/iris.csv-pca-20221027_210622.png
+  :width: 400
+  :alt: pca projection result
 
 
 Singularity
