@@ -38,8 +38,8 @@ if (length(args)==0) {
                      },
           "c_pcaproj" =  {
                     # validating parameters against the pca json schema
-                    validate_parameters(lparams)
-                    c_pcaproj(parameters)
+                    validate_parameters(parameters)
+                    c_pcaproj(lparams)
                   },
           cat(paste0("'",plottype,"' plot is not found in this package"))
           )
