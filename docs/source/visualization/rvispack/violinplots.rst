@@ -1,2 +1,2 @@
-Creating visualizations with rvispack
+Violin plots with rvispack
 =====================================
