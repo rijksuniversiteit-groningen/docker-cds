@@ -22,7 +22,7 @@ This command pulls the `venustiano/cds:rvispack-0.1.0` image from
 Docker Hub in case it is not present on the local host. Then, it
 displays information about the containerized package and the available
 visualization techniques. Finally, it removes the stopped container
-(usng the `--rm` flag).
+(using the `--rm` flag).
 
 ```bash
 docker run --rm venustiano/cds:rvispack-0.1.0
