@@ -6,4 +6,4 @@
 
 Please visit the documentation website for help to use the image.
 
-- [Docker-CDS rvispack](https://docker-cds.readthedocs.io/en/latest/using/visualization/rvispack.html) on ReadTheDocs.
+- [Docker-CDS rvispack](https://docker-cds.readthedocs.io/en/latest/visualization/rvispack/rvispack.html) on ReadTheDocs.
