@@ -95,7 +95,7 @@ To create the projection run::
   docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_pcaproj pca_iris_params.json
 
 .. figure:: ../../_static/iris.csv-pca-20221027_210622.png
-  :width: 400
+  :width: 800
   :alt: pca projection result
 
 
