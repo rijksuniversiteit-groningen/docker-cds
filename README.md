@@ -61,7 +61,7 @@ docker run --rm -v ${PWD}:/app/data venustiano/cds:rvispack-0.1.0 c_violin violi
 will produce a violin plot in the `Rplots.pdf` file.
 
 
-![alt violin plot](./docs/source/pics/Rplots.pdf.png)
+![Violin plot](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs/source/_static/Rplots.pdf.png)
 
 The `-v` flag mounts the current working directory (`$PWD`) as
 `/app/data` folder in the container and `c_violin` is the function
@@ -103,7 +103,7 @@ wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/mast
 docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_violin mpg_params.json
 ```
 
-![alt mpgviolin](docs/source/pics/ggplotmpg.csv-violin-20221009_203930.png)
+![MPG violin plots](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs/source/_static/ggplotmpg.csv-violin-20221009_203930.png)
 
 
 ### Using singularity
