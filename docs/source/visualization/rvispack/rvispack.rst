@@ -104,7 +104,7 @@ visualization::
   "interative":true
   ...
 
- .. raw:: 
+ .. raw:: html
     :file: ../../_static/iris.csv-pca-20221028_074618.html
 	
 Singularity
