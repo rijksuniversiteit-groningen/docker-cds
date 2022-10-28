@@ -40,9 +40,12 @@ html_theme_options = {
     "use_download_button": True,
 }
 
-extensions = ["myst_parser", "sphinx_copybutton"]
+extensions = ["myst_parser", "sphinx_copybutton",'sphinx.ext.todo']
 source_suffix = {
     ".rst": "restructuredtext",
     ".md": "markdown",
 }
 pygments_style = "sphinx"
+
+# Display todos by setting to True
+todo_include_todos = True

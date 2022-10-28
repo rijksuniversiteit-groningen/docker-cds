@@ -85,30 +85,31 @@ JSON file are displayed in the `Arguments` section::
 The `names` in the JSON file are between double quotes and the
 description of the `values` are between angle brackets. This
 description includes the data types as defined in the `JSON
-<https://www.json.org/json-en.html>`_ format. Below is an example of
+<https://www.json.org/json-en.html>`_ format. Below is an example of a
 valid JSON file (`pca_iris_params.json`)::
    
    {
        "filename": "iris.csv",
-       "col_ids":["sepal_length","sepal_width","petal_length","petal_width","species"],
        "colour": "species",
        "scale": true,
        "biplot": true,
-       "height": 10,
-       "width": 15,
-       "title": "Iris PCA projection",
-       "save":true,
-       "device":"png",
-       "interactive":false
+       "title": "Iris PCA projection"
    }
+
+JSON objects and name/value pairs
++++++++++++++++++++++++++++++++++
+
+.. todo::
+
+   Write documentation for this subsection.
 
 Volumes
 +++++++
 
-To access the data and the JSON file, a folder in the filesystem must
-be mounted in the container. A common way to achieve this is by
-passing an argument like `-v "$PWD":/app/data` in the command as
-follows::
+For the visualization functions to access the data and the JSON file,
+a folder in the filesystem must be mounted in the container. A common
+way to achieve this is by passing an argument like `-v
+"$PWD":/app/data` in the command as follows::
    
   docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_pcaproj pca_iris_params.json
 
@@ -126,7 +127,7 @@ in the container in the folder `/app/data`.
    Do not change the `/app/data` mounting point.
 
 The result of running the previous command is the following
-visualization.
+visualization stored in a `Rplot.pdf` file.
   
 .. figure:: ../../_static/iris.csv-pca-20221027_210622.png
   :width: 800
@@ -134,10 +135,11 @@ visualization.
 
 Setting `"interactive"` to `true` in `pca_iris_params.json` will
 generate an interactive visualization::
-
+  
   ...
-  "interative":true
-  ...
+       "title": "Iris PCA projection",
+       "interative":true
+   }
 
 .. raw:: html
 	 
@@ -146,4 +148,6 @@ generate an interactive visualization::
 Singularity
 ***********
 
-UNDER CONSTRUCTION
+.. todo::
+
+   Write documentation for running `rvispack` visualizations using singularity.
