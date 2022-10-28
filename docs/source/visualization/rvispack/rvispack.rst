@@ -16,11 +16,13 @@ Docker
 
 The command
 ::
-  docker run --rm venustiano/cds:rvispack-0.1.0
+
+   docker run --rm venustiano/cds:rvispack-0.1.0
 
 Will display information about the `R packages` used to implement the
 visualizations. The `Index` section displays the current implemented
 functions::
+
   Index:
 
   c_histogram             Histogram
@@ -36,10 +38,12 @@ parameter. This file contains information such as the data file, the
 parameters of the `visualization` technique and the output
 formats. The required `name/value` pairs in the JSON file can be
 displayed by adding `<c_function_name> help` as follows::
+
   docker run --rm venustiano/cds:rvispack-0.1.0 c_pcaproj help
 
 A brief description of the `name/value` pairs that could be in the
 JSON file are displayed in the `Arguments` section::
+
   Arguments:
 
       lp: list of parameters in a json file
@@ -76,6 +80,7 @@ description include the data types as defined in the `JSON
 <https://www.json.org/json-en.html>`_ format. Below is an example of
 valid JSON file (`pca_iris_params.json`).
 ::
+   
    {
        "filename": "iris.csv",
        "col_ids":["sepal_length","sepal_width","petal_length","petal_width","species"],
@@ -100,12 +105,14 @@ To create the projection run::
 
 Setting `"interactive" to `true` will generate an interactive html
 visualization::
+
   ...
   "interative":true
   ...
 
 .. raw:: html
-    <iframe src="../../_static/iris.csv-pca-20221028_074618.html" height="500px" width="100%"></iframe>
+	 
+	 <iframe src="../../_static/iris.csv-pca-20221028_074618.html" height="500px" width="100%"></iframe>
 	
 Singularity
 ***********
