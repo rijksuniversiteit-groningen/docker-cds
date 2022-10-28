@@ -112,9 +112,9 @@ follows::
    
   docker run --rm -v "$PWD":/app/data venustiano/cds:rvispack-0.1.0 c_pcaproj pca_iris_params.json
 
-`-v` is just an abbreviation of `--volume`. The content of `$PWD`
-(working directory) including the JSON and data files will be
-available in the container in the folder `/app/data` in the container.
+`-v` is just an abbreviation of `--volume`. The content of the working
+directory (`$PWD`) including the JSON and data files will be available
+in the container in the folder `/app/data`.
 
 .. note::
 
