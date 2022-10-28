@@ -98,6 +98,14 @@ To create the projection run::
   :width: 800
   :alt: pca projection result
 
+Setting `"interactive" to `true` will generate an interactive html
+visualization::
+  ...
+  "interative":true
+  ...
 
+ .. raw:: 
+    :file: ../../_static/iris.csv-pca-20221028_074618.html
+	
 Singularity
 ***********
