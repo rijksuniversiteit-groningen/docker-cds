@@ -1,2 +1,2 @@
-PCA projetions with rvispack
-=====================================
+PCA projetions
+--------------

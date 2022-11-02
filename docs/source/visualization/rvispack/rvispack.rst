@@ -191,3 +191,9 @@ Singularity
 .. todo::
 
    Write documentation for running `rvispack` visualizations using singularity.
+
+..  toctree::
+    
+    histograms
+    pcaprojections
+    violinplots

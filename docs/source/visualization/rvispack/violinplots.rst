@@ -1,2 +1,2 @@
-Violin plots with rvispack
-=====================================
+Violin plots
+------------

@@ -20,9 +20,12 @@ Docker-CDS Containerized Data Science
    :caption: Contents:
 
    visualization/rvispack/rvispack
-   visualization/rvispack/histograms
-   visualization/rvispack/pcaprojections
-   visualization/rvispack/violinplots
+
+..
+      visualization/rvispack/histograms
+
+	 visualization/rvispack/pcaprojections
+	 visualization/rvispack/violinplots
 	     
 
 .. Indices and tables

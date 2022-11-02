@@ -1,2 +1,2 @@
-Histograms with rvispack
-========================
+Histograms
+----------
