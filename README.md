@@ -1,7 +1,7 @@
 # Docker-CDS
 Docker-CDS are a set of containerized data science methods. The
 containers are designed to run as black boxes executed from a command
-line interface. The input is defined in a
+line interface. The input of a method is defined in a
 [JSON](https://www.json.org/json-en.html) file including information
 such as the data file, the parameters of the method and the output
 formats.

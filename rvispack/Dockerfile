@@ -5,7 +5,8 @@ FROM venustiano/base-rvis:rbase-4.2.1
 
 LABEL maintainer="CDS Project"
 
-RUN R -e "devtools::install_github('rijksuniversiteit-groningen/rvispack');"
+RUN R -e "devtools::install_github('rijksuniversiteit-groningen/cds-utils',subdir='rutils'); \
+    devtools::install_github('rijksuniversiteit-groningen/rvispack');"
 
 COPY cm_plots.R /app/bin/
 WORKDIR /app/data/
