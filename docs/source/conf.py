@@ -40,7 +40,9 @@ html_theme_options = {
     "use_download_button": True,
 }
 
-extensions = ["myst_parser", "sphinx_copybutton",'sphinx.ext.todo']
+extensions = ["myst_parser",
+              "sphinx_copybutton",'sphinx.ext.todo','sphinxcontrib.bibtex']
+bibtex_bibfiles = ['refs.bib']
 source_suffix = {
     ".rst": "restructuredtext",
     ".md": "markdown",

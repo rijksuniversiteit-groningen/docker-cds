@@ -1,15 +1,15 @@
-Creating visualizations with rvispack
+Visualizations with rvispack
 =====================================
 
+Basics
+------
+
 Assumptions
------------
+***********
 
 - `Docker <https://docs.docker.com/get-docker/>`_ or `Singularity
   <https://docs.sylabs.io/guides/3.5/user-guide/introduction.html>`_ are
   installed.
-
-Basics
-------
 
 Docker
 ******
@@ -192,8 +192,8 @@ Singularity
 
    Write documentation for running `rvispack` visualizations using singularity.
 
-..  toctree::
+.. toctree::
     
-    histograms
-    pcaprojections
-    violinplots
+   histograms
+   pcaprojections
+   violinplots

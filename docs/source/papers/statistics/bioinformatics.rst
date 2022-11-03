@@ -1,0 +1,6 @@
+Bioinformatics
+--------------
+
+..  toctree::
+    
+    GeneNetTools/GeneNetTools

@@ -19,8 +19,8 @@ Docker-CDS Containerized Data Science
    :maxdepth: 3
    :caption: Contents:
 
-   visualization/rvispack/rvispack
-   papers/statistics/GeneNetTools
+   visualization/visualization
+   papers/papers
 	     
 
 .. Indices and tables
