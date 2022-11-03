@@ -5,7 +5,10 @@ GeneNetTools
 
    This documentation is still a work in progress.
 
-This container includes the functions implemented in :cite:t:`2022:bernal`.
+The `GeneNetTools` container includes the functions implemented in
+:cite:t:`2022:bernal`. These functions allow not only to ``reproduce``
+the results in the paper but also ``reuse``  the functions with your own
+data.
 
 .. bibliography::
    :filter: docname in docnames
