@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'docker-cds'
+project = 'RUG docker-cds'
 copyright = '2022, University of Groningen'
 author = 'University of Groningen'
 release = '0.0.0'
@@ -28,7 +28,7 @@ exclude_patterns = []
 html_static_path = ['_static']
 
 html_theme = "sphinx_book_theme"
-html_title = "Docker-CDS documentation"
+html_title = "RUG Docker-CDS documentation"
 html_logo = "_static/twitter_icon_300px_wit.jpg"
 html_theme_options = {
     "path_to_docs": "docs",
