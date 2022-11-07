@@ -1,5 +1,5 @@
-# Docker-CDS
-Docker-CDS are a set of containerized data science methods. The
+# RUG Docker-CDS
+RUG Docker-CDS are a set of containerized data science methods. The
 containers are designed to run as black boxes executed from a command
 line interface. The input of a method is defined in a
 [JSON](https://www.json.org/json-en.html) file including information

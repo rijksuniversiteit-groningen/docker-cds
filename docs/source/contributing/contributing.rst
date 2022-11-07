@@ -1,0 +1,7 @@
+Contributing
+============
+
+.. toctree::
+
+   issues
+   newmethod

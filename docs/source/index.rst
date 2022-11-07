@@ -26,8 +26,8 @@ RUG Docker-CDS Containerized Data Science
    :maxdepth: 3
    :caption: Contributor Guide:
 
-   contributing/issues
-   contributing/newmethod
+   contributing/contributing
+
 .. Indices and tables
 .. ==================
 

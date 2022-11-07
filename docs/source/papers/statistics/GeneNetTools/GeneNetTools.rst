@@ -86,4 +86,4 @@ Result
 
 .. figure:: ../../../_static/shrunk.png
   :width: 500
-  :alt: pca projection result
+  :alt: shrunk result
