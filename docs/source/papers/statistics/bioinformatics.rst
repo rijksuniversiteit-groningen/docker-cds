@@ -1,5 +1,5 @@
 Bioinformatics
---------------
+==============
 
 ..  toctree::
     

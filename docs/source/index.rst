@@ -12,8 +12,8 @@
    :parser: myst_parser.sphinx_
    
 
-Docker-CDS Containerized Data Science
--------------------------------------
+RUG Docker-CDS Containerized Data Science
+-----------------------------------------
 
 .. toctree::
    :maxdepth: 3
@@ -22,6 +22,11 @@ Docker-CDS Containerized Data Science
    visualization/visualization
    papers/papers
 	     
+.. toctree::
+   :maxdepth: 3
+   :caption: Contributor Guide:
+
+   contributing/contributing
 
 .. Indices and tables
 .. ==================

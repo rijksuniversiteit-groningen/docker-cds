@@ -1,5 +1,5 @@
 Containerized papers
---------------------
+====================
 
 ..  toctree::
     
