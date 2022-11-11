@@ -16,13 +16,11 @@ if (length(args)==0) {
   if (parameters == "help")
      switch( func,
           "c_pcor_shrunk" = ?c_pcor_shrunk,
-          # "c_violin" =    ?c_violin,
-          # "c_pcaproj" = ?c_pcaproj,
-	  cat(paste0("'",func,"' function is not available"))
+	  cat(paste0("'",func,"' function is not available\n"))
 	  )
   else {
     # reading and validating the list of parameters
-    cat(paste("Opening  parameters file:",parameters))
+    cat(paste("Opening  parameters file:",parameters,"\n"))
     lparams <- validate_json_file(parameters)
 
     switch( func,
@@ -31,7 +29,7 @@ if (length(args)==0) {
                           validate_parameters(parameters,pschema="pcor_shrunk_schema.json")
                           c_pcor_shrunk(lparams)
                         },
-          cat(paste0("'",func,"' function is not available"))
+          cat(paste0("'",func,"' function is not available\n"))
           )
 	  }
 }
