@@ -1,14 +1,15 @@
-GeneNetTools
-============
+GeneNetTools container
+======================
 
 .. note::
 
    This documentation is still a work in progress.
 
-The `GeneNetTools` container includes the functions implemented in
-:cite:t:`2022:bernal`. These functions allow not only to ``reproduce``
-the results in the paper but also ``reuse`` the functions with your
-own data. It is assumed that you have `Docker
+The `GeneNetTools` container implements the statistical techniques
+developed in :cite:t:`2022:bernal`. These implementations allow not
+only to ``reproduce`` the results in the paper but also ``reuse`` the
+functions with your own data ``without the need for programming
+skills``. It is assumed that you have `Docker
 <https://docs.docker.com/get-docker/>`_ installed.
 
 .. bibliography::
@@ -130,7 +131,7 @@ Function documentation
 GitHub
 ******
 
-If you want to use the original source code or install the R package,
-visit the main author's `Github repository
+If you want to use the original ``GeneNetTools`` source code or
+install the R package, visit the main author's `Github repository
 <https://github.com/V-Bernal/GeneNetTools>`_.
 
