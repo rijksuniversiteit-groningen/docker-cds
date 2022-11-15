@@ -1,5 +1,6 @@
-GeneNetTools container
-======================
+========================
+ GeneNetTools container
+========================
 
 .. note::
 
@@ -15,11 +16,11 @@ skills``. It is assumed that you have `Docker
 .. bibliography::
    :filter: docname in docnames
 
-Reproducible
-************
+Reproducible results
+********************
 	    
 Figure 2 (b)
-++++++++++++
+------------
 
 #. Save the following JSON object in an ``ecoli.json`` file.
    
@@ -57,10 +58,32 @@ and the plot in ``Rplots.pdf``
 
 .. figure:: ../../../_static/floretplot.png-1.png
   :width: 500
-  :alt: shrunk result
+  :alt: florest plot
 
-Reusable
-********
+Network
+-------
+
+::
+
+   docker run --rm -v "$PWD":/app/data genenettools c_pval_pcor_shrunk ecoli.json
+
+.. figure:: ../../../_static/network.png-1.png
+  :width: 500
+  :alt: network
+
+Scatterplot
+-----------
+
+::
+
+   docker run --rm -v "$PWD":/app/data genenettools c_zscore_shrunk ecoli.json
+
+.. figure:: ../../../_static/scatter-1.png
+  :width: 500
+  :alt: scatter plot
+	
+Reusing the methods
+*******************
 
 Using your own data
 
@@ -75,10 +98,10 @@ will display the available functions in the container::
 
   Index:
 
-  c_pcor_shrunk           Pcor_Shrunk
+  c_pcor_shrunk           Partial correlation shrunk
+  c_pval_pcor_shrunk      pval_pcor_shrunk
+  c_zscore_shrunk         c_zscore_shrunk
   compare.GGM             compare.GGM
-  confint.GGM             confint.GGM
-  corr.shrunk             corr.shrunk
 
 The `c_` prefix in the function name stands for containerized and
 receives a `JSON <https://www.json.org/json-en.html>`_ file name as a
@@ -87,7 +110,9 @@ the parameters of the function and the output formats. Finally, the
 container will stop running and the `--rm` flag will remove it.
 
 Function documentation
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
+
+The ``help`` flag.
 
 ::
    
@@ -97,7 +122,7 @@ Function documentation
 
    c_pcor_shrunk          package:GeneNetTools           R Documentation
 
-   c_pcor_shrunk
+   Partial correlation shrunk
 
    Description:
 
@@ -132,6 +157,6 @@ GitHub
 ******
 
 If you want to use the original ``GeneNetTools`` source code or
-install the R package, visit the main author's `Github repository
+install the R package, visit the main author's `GitHub repository
 <https://github.com/V-Bernal/GeneNetTools>`_.
 
