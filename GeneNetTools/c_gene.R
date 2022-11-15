@@ -16,6 +16,8 @@ if (length(args)==0) {
   if (parameters == "help")
      switch( func,
           "c_pcor_shrunk" = ?c_pcor_shrunk,
+          "c_zscore_shrunk" = ?c_zscore_shrunk,
+          "c_pval_pcor_shrunk" = ?c_pval_pcor_shrunk,
 	  cat(paste0("'",func,"' function is not available\n"))
 	  )
   else {
@@ -29,6 +31,16 @@ if (length(args)==0) {
                           validate_parameters(parameters,pschema="pcor_shrunk_schema.json")
                           c_pcor_shrunk(lparams)
                         },
+          "c_pval_pcor_shrunk" = {
+            # validating the parameters against the JSON schema
+            validate_parameters(parameters,pschema="pcor_shrunk_schema.json")
+            c_pval_pcor_shrunk(lparams)
+          },
+          "c_zscore_shrunk" = {
+            # validating the parameters against the JSON schema
+            validate_parameters(parameters,pschema="zscore_shrunk_schema.json")
+            c_zscore_shrunk(lparams)
+          },
           cat(paste0("'",func,"' function is not available\n"))
           )
 	  }
