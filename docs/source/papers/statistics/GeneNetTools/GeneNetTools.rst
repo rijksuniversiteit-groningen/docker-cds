@@ -44,21 +44,26 @@ Figure 2 (b)
 
       docker run --rm -v "$PWD":/app/data genenettools c_pcor_shrunk ecoli.json
 
-Results
+   Results
 
-::
+   ::
    
-   Opening  parameters file: ecoli.json
-   Reading all columns
-   Number of samples =  9 
-   Number of variables =  102 
-   degrees of freedom k = 828.949258958985
+      Opening  parameters file: ecoli.json
+      Reading all columns
+      Number of samples =  9 
+      Number of variables =  102 
+      degrees of freedom k = 828.949258958985
 
-and the plot in ``Rplots.pdf``
+   and the plot in ``Rplots.pdf``
 
-.. figure:: ../../../_static/floretplot.png-1.png
-  :width: 500
-  :alt: florest plot
+   .. figure:: ../../../_static/floretplot.png-1.png
+	:width: 500
+	:alt: florest plot
+
+	Escherichia coli. Forest plot of partial correlations. The 15
+	strongest edges are displayed with their 95% confidence
+	intervals. The vertical lines show the 0.1 and 0.3 thresholds
+	for weak and mild correlations (Cohen, 1988)
 
 Network
 -------
@@ -70,7 +75,11 @@ Network
 .. figure:: ../../../_static/network.png-1.png
   :width: 500
   :alt: network
-
+	  
+  Escherichia coli microarray network analysis. The transcripts are
+  represented by nodes and the significant partial correlation by
+  edges, see t-test [Equation (6)].
+	
 Scatterplot
 -----------
 
