@@ -42,7 +42,7 @@ Figure 2 (b)
    
    ::
 
-      docker run --rm -v "$PWD":/app/data genenettools c_pcor_shrunk ecoli.json
+      docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pcor_shrunk ecoli.json
 
    Results
 
@@ -70,7 +70,7 @@ Network
 
 ::
 
-   docker run --rm -v "$PWD":/app/data genenettools c_pval_pcor_shrunk ecoli.json
+   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pval_pcor_shrunk ecoli.json
 
 .. figure:: ../../../_static/network.png-1.png
   :width: 500
@@ -85,7 +85,7 @@ Scatterplot
 
 ::
 
-   docker run --rm -v "$PWD":/app/data genenettools c_zscore_shrunk ecoli.json
+   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_zscore_shrunk ecoli.json
 
 .. figure:: ../../../_static/scatter-1.png
   :width: 500
@@ -101,7 +101,7 @@ Basic commands
 	    
 Running the container::
 
-  docker run --rm genenettools
+  docker run --rm venustiano/cds:genenettools-0.1.0
 
 will display the available functions in the container::
 
@@ -125,7 +125,7 @@ The ``help`` flag.
 
 ::
    
-   docker run --rm genenettools c_pcor_shrunk help
+   docker run --rm venustiano/cds:genenettools-0.1.0 c_pcor_shrunk help
 
 ::
 
@@ -161,7 +161,13 @@ The ``help`` flag.
 
      Forest plot of partial correlations in Rplot.pdf
 
+Citation
+********
 
+.. todo::
+
+   Generate Zenodo DOI
+     
 GitHub
 ******
 
