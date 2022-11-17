@@ -1,4 +1,9 @@
 # RUG Docker-CDS
+
+![GitHub](https://img.shields.io/github/license/rijksuniversiteit-groningen/docker-cds)
+![Read the Docs](https://img.shields.io/readthedocs/docker-cds)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rijksuniversiteit-groningen/docker-cds)
+
 RUG Docker-CDS are a set of containerized data science methods. The
 containers are designed to run as black boxes executed from a command
 line interface. The input of a method is defined in a
