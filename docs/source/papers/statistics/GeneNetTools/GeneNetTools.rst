@@ -111,7 +111,8 @@ Figure 3. Differential Network Analysis
       Reading all columns
       Number of samples =  11 
       Number of variables =  221 
-      degrees of freedom k = 465.630975024994Number of samples =  10 
+      degrees of freedom k = 465.630975024994
+      Number of samples =  10 
       Number of variables =  221 
       degrees of freedom k = 284.915155078846
    
