@@ -1,6 +1,6 @@
-========================
- GeneNetTools container
-========================
+=============
+ GeneNetTools
+=============
 
 .. note::
 
@@ -19,36 +19,34 @@ skills``. It is assumed that you have `Docker
 Reproducible results
 ********************
 	    
-Figure 2 (b)
-------------
+Figure 2 (b). Partial Correlations Plot
+---------------------------------------
 
-#. Save the following JSON object in an ``ecoli.json`` file.
-   
-   ::
-   
+#. Save the following JSON object in an ``shrunk.json`` file
+
+   .. code-block:: json
+		   
       {
-        "filename":"ecoli.csv",
-        "verbose": true,
-        "cutoff": 0.01
-	}
+          "filename":"https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/data/ecoli.csv",
+	  "verbose": true,
+	  "cutoff": 0.01
+      }
 
-#. Download ``ecoli.csv`` running the command
+   or download the file running the command::
 
-   ::
-
-      wget https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/data/ecoli.csv
+     wget https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/params/shrunk.json
 
 #. Run the command
    
    ::
 
-      docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pcor_shrunk ecoli.json
+      docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pcor_shrunk shrunk.json
 
    Results
 
    ::
    
-      Opening  parameters file: ecoli.json
+      Opening  parameters file: shrunk.json
       Reading all columns
       Number of samples =  9 
       Number of variables =  102 
@@ -70,7 +68,7 @@ Network
 
 ::
 
-   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pval_pcor_shrunk ecoli.json
+   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pval_pcor_shrunk shrunk.json
 
 .. figure:: ../../../_static/network.png-1.png
   :width: 500
@@ -80,17 +78,48 @@ Network
   represented by nodes and the significant partial correlation by
   edges, see t-test [Equation (6)].
 	
-Scatterplot
------------
+Figure 3. Differential Network Analysis
+---------------------------------------
 
-::
+#. Save the following JSON object in an ``zscore.json`` file
 
-   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_zscore_shrunk ecoli.json
+   .. code-block:: json
+		
+      {
+	"filename": "https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/data/DBA_2J.csv",
+	"filename2": "https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/data/C57BL_6J.csv",
+	"verbose": true,
+	"cutoff": 0.01
+      }
 
-.. figure:: ../../../_static/scatter-1.png
-  :width: 500
-  :alt: scatter plot
-	
+   or download the json file running the command::
+
+     wget https://raw.githubusercontent.com/V-Bernal/GeneNetTools/venus/feature/container/GeneNetTools/tests/testthat/params/zscore.json
+
+#. Run the command
+      
+   ::
+
+      docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_zscore_shrunk zscore.json
+
+   Results
+
+   ::
+
+      Opening  parameters file: zscore.json 
+      Reading all columns
+      Reading all columns
+      Number of samples =  11 
+      Number of variables =  221 
+      degrees of freedom k = 465.630975024994Number of samples =  10 
+      Number of variables =  221 
+      degrees of freedom k = 284.915155078846
+   
+   .. figure:: ../../../_static/scatter-1.png
+      :width: 500
+      :alt: scatter plot
+
+	    
 Reusing the methods
 *******************
 
@@ -119,7 +148,7 @@ the parameters of the function and the output formats. Finally, the
 container will stop running and the `--rm` flag will remove it.
 
 Function documentation
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 The ``help`` flag.
 
