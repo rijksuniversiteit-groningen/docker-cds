@@ -16,8 +16,6 @@ functions with your own data ``without the need for programming
 skills``. It is assumed that you have `Docker
 <https://docs.docker.com/get-docker/>`_ installed.
 
-.. bibliography::
-   :filter: docname in docnames
 
 Reproducible results
 ====================
@@ -66,20 +64,6 @@ Figure 2 (b). Partial correlations plot
 	intervals. The vertical lines show the 0.1 and 0.3 thresholds
 	for weak and mild correlations (Cohen, 1988).
 
-Network
--------
-
-::
-
-   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pval_pcor_shrunk shrunk.json
-
-.. figure:: ../../../_static/network.png-1.png
-  :width: 500
-  :alt: network
-	  
-  Escherichia coli microarray network analysis. The transcripts are
-  represented by nodes and the significant partial correlation by
-  edges, see t-test [Equation (6)].
 	
 Figure 3. Differential network analysis
 ---------------------------------------
@@ -123,6 +107,24 @@ Figure 3. Differential network analysis
       :width: 500
       :alt: scatter plot
 
+
+Additional example
+========================
+
+Network for Escherichia coli microarray data :cite:t:`10.1093/bioinformatics/btz357`.
+
+
+::
+
+   docker run --rm -v "$PWD":/app/data venustiano/cds:genenettools-0.1.0 c_pval_pcor_shrunk shrunk.json
+
+.. figure:: ../../../_static/network.png-1.png
+  :width: 500
+  :alt: network
+
+  Figure S5-a. GGM structure for Escherichia coli. The figure displays the
+  GGM structure for Escherichia coli for the connected genes with
+  Shrunk MLE at 𝛼 = 0.01. 
 	    
 Reusing the methods
 ===================
@@ -208,3 +210,8 @@ If you want to use the original ``GeneNetTools`` source code or
 install the R package, visit the main author's `GitHub repository
 <https://github.com/V-Bernal/GeneNetTools>`_.
 
+References
+==========
+
+.. bibliography::
+   :filter: docname in docnames
