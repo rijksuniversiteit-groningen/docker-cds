@@ -1,10 +1,13 @@
-=============
+==============
  GeneNetTools
-=============
+==============
 
 .. note::
 
    This documentation is still a work in progress.
+
+.. image:: https://img.shields.io/docker/pulls/venustiano/cds
+   :alt: Docker Pulls
 
 The `GeneNetTools` container implements the statistical techniques
 developed in :cite:t:`2022:bernal`. These implementations allow not
@@ -17,9 +20,9 @@ skills``. It is assumed that you have `Docker
    :filter: docname in docnames
 
 Reproducible results
-********************
+====================
 	    
-Figure 2 (b). Partial Correlations Plot
+Figure 2 (b). Partial correlations plot
 ---------------------------------------
 
 #. Save the following JSON object in an ``shrunk.json`` file
@@ -61,7 +64,7 @@ Figure 2 (b). Partial Correlations Plot
 	Escherichia coli. Forest plot of partial correlations. The 15
 	strongest edges are displayed with their 95% confidence
 	intervals. The vertical lines show the 0.1 and 0.3 thresholds
-	for weak and mild correlations (Cohen, 1988)
+	for weak and mild correlations (Cohen, 1988).
 
 Network
 -------
@@ -78,7 +81,7 @@ Network
   represented by nodes and the significant partial correlation by
   edges, see t-test [Equation (6)].
 	
-Figure 3. Differential Network Analysis
+Figure 3. Differential network analysis
 ---------------------------------------
 
 #. Save the following JSON object in an ``zscore.json`` file
@@ -111,7 +114,8 @@ Figure 3. Differential Network Analysis
       Reading all columns
       Number of samples =  11 
       Number of variables =  221 
-      degrees of freedom k = 465.630975024994Number of samples =  10 
+      degrees of freedom k = 465.630975024994
+      Number of samples =  10 
       Number of variables =  221 
       degrees of freedom k = 284.915155078846
    
@@ -121,12 +125,12 @@ Figure 3. Differential Network Analysis
 
 	    
 Reusing the methods
-*******************
+===================
 
 Using your own data
 
 Basic commands
-**************
+==============
 	    
 Running the container::
 
@@ -191,14 +195,14 @@ The ``help`` flag.
      Forest plot of partial correlations in Rplot.pdf
 
 Citation
-********
+========
 
 .. todo::
 
    Generate Zenodo DOI
      
 GitHub
-******
+======
 
 If you want to use the original ``GeneNetTools`` source code or
 install the R package, visit the main author's `GitHub repository
