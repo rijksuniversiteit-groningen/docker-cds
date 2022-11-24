@@ -11,15 +11,18 @@
 
 The `GeneNetTools` container implements the statistical techniques
 developed in :cite:t:`2022:bernal`. These implementations allow not
-only to ``reproduce`` the results in the paper but also ``reuse`` the
-functions with your own data ``without the need for programming
-skills``. It is assumed that you have `Docker
+only to ``reproduce`` some of the results in the paper but also
+``reuse`` the functions with your own data ``without the need for
+programming skills``. It is assumed that you have `Docker
 <https://docs.docker.com/get-docker/>`_ installed.
 
 
 Reproducible results
 ====================
-	    
+
+From the time being, two figures can be reproduced with the
+`GeneNetTools` container ``Figure 2 (b)`` and ``Figure 3``.
+
 Figure 2 (b). Partial correlations plot
 ---------------------------------------
 
@@ -129,7 +132,11 @@ Network for Escherichia coli microarray data :cite:t:`10.1093/bioinformatics/btz
 Reusing the methods
 ===================
 
-Using your own data
+When using the methods with your own data, a couple of constraint are
+that the variables/columns should be numeric and make sure that ``no
+rownames`` are in the data file. The above examples retrieve the data
+is retrieved from internet but it can be stored in the same folder as
+the JSON file.
 
 Basic commands
 ==============
