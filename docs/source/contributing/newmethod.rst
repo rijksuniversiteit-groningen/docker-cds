@@ -1,5 +1,5 @@
-New Data Science Method
-=======================
+New Reusable Data Science Method
+================================
 
 .. note::
 
@@ -25,6 +25,41 @@ categories can be added as needed. New methods will be included in an
 appropriate `branch` of the hierarchical tree or in a new category if
 necessary.
 
+Implementing a new data science method
+++++++++++++++++++++++++++++++++++++++
+
+#. Chose a method.
+#. Verify that the method has not been implemented yet.
+#. Define a JSON schema to validate the input parameters.
+#. Implement the method considering the following:
+
+   - Develop your method directly in a Docker container.
+   - The main function receive parameters derived from a JSON
+     object/file.
+   - The parameters are validated using the JSON schema defined in the
+     previous step.
+   - Make sure you can run the method from the command line
+     interface. For example, an ``R`` method can be executed as
+     follows::
+
+	Rscript method.R [options] <parameters.json>
+
+     or using a bash-style script ``#!<path to interpreter>``
+     ::
+	
+	method.R [options] <parameters.json>
+
+     In fact, `method.R` can be any executable file and
+     ``parameters.json`` is a required argument containing essential
+     information to run the method.
+   - Identify a potential Docker image to embed the method or build a
+     minimal container. In the latter case, use the command in the
+     previous bullet as ``ENTRYPOINT``.
+   - Push the docker image to Docker Hub.
+     
+#. Update this ReadTheDocs documentation.
+
+     
 Implement your method
 +++++++++++++++++++++
 
