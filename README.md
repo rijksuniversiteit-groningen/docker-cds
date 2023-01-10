@@ -126,4 +126,4 @@ singularity build pcr.sif docker://venustiano/cds:rvispack-0.1.0
 
 ## Contributing
 
-UNDER CONSTRUCTION
+Please see the [Contributor Guide on ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/contributing/contributing.html) for information about how to contribute updates, features, tests and community maintained methods.
