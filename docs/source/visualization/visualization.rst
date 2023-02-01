@@ -6,3 +6,4 @@ Visualization techniques
    :caption: Visualization:
 
    rvispack/rvispack
+   rugplot/rugplot
