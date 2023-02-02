@@ -21,7 +21,10 @@ Singularity. Here it is described the use of ``rugplot`` via
 the CLI. The commands have two parts, the `Docker` and the
 `RuGplot`.
 
-Docker
+.. _docker-lab:
+
+Docker commands
++++++++++++++++
 
 The Docker part will be most of the time as follows::
 
@@ -32,11 +35,13 @@ The command will download the Docker image
 computer host. The ``--rm`` flag will remove the container when the
 visualiztion task is done. The argument ``-v "$PWD":/app/data`` will
 mount the current working directory in the `/app/data` folder within
-the container.
+the container. This will enable `rugplot` to use data to create the
+visualizations.
 
 .. note::
 
-   It is important that the data are in the working directory.
+   Running the command ``ls`` will display the files in the working
+   directory
 
 .. note::
 
@@ -46,7 +51,8 @@ the container.
 
    Do not change the `/app/data` mounting point.
 
-RuGplot
+The ``rugplot`` commands
+++++++++++++++++++++++++
 
 Based on standards and conventions, `rugplot` use the following special
 characters in the command descriptions.
@@ -62,33 +68,38 @@ The command
 
    docker run --rm venustiano/rugplot:0.1.0
 
-will display information to create visualizations in three steps::
+will display information to create visualizations in three steps:
 
-  usage: /app/bin/rugplots.R [-h] {template,plot} ...
+.. code-block:: console
+   :emphasize-lines: 1
+   :caption: rugplot help
+   :name: rughelp
 
-  The aim of this program is to provide a tool to quickly create high quality
-  and customizable visualization plots in three simple steps.
+   usage: /app/bin/rugplots.R [-h] {template,plot} ...
+
+   The aim of this program is to provide a tool to quickly create high
+   quality and customizable visualization plots in three simple steps.
 
         First, create a JSON template. 
 	Second, fill in the template. 
 	Third, run the 'plot' COMMAND.
 
-  For example, 
+   For example, 
 
-  1) The following command will create a 'pca_projection_params.json' template
+   1) The following command will create a 'pca_projection_params.json' template
 
 	./rugplots.R template --plot pca
 
-  2) Open the template and fill in the following name/value pairs
+   2) Open the template and fill in the following name/value pairs
 
 	"filename": "iris.csv",
 	"colour": "species",
 
-  3) Run the 'plot' command to generate the PCA plot in Rplots.pdf
+   3) Run the 'plot' command to generate the PCA plot in Rplots.pdf
 
 	./rugplots.R plot --plot pca --file pca_projection_params.json
 
-  Run './rugplots.R COMMAND --help' for more information on a command.
+   Run './rugplots.R COMMAND --help' for more information on a command.
 
 
   
@@ -96,11 +107,27 @@ The first line ``usage`` indicates that the ``rugplot.R`` script will
 be executed receiving the optional ``[-h]`` help argument and a required
 subcommand either ``template`` or ``plot``.
 
-The ``template`` SUBCOMMAND
-+++++++++++++++++++++++++++
+.. note ::
 
-The `template` subcommand is used in the first step to create a JSON
-template. The different options can be found using the ``help``
+  The ``rugplot.R`` script does not have to be specified in the
+  ``rugplot`` container commands, because it is given by default when
+  the container runs. See the :ref:`template-lab` and the
+  :ref:`plot-lab` subsections.
+
+.. note ::
+
+  To be able to run the steps in :ref:`rughelp` we need to add the
+  volume argument in the command, as described in the
+  :ref:`docker-lab` section.
+       
+.. _template-lab:
+
+The ``template`` subcommand
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `template` subcommand is used to create a JSON template in the
+first step to create a visualization plot using the `rugplot`
+container. The subcommand options can be found using the ``--help``
 argument::
 
   docker run --rm venustiano/rugplot:0.1.0 template --help
@@ -109,30 +136,47 @@ Usage, types of visualizations available and an example will also be
 displayed:
 
 .. code-block:: console
+   :emphasize-lines: 1
 
-  usage: /app/bin/rugplots.R template [-h] [-o] -p PLOT [-d] [-f FILE]
+   usage: /app/bin/rugplots.R template [-h] [-o] -p PLOT [-d] [-f FILE]
 
-  Function to save JSON templates for the following types of visualization PLOTs:
+   Function to save JSON templates for the following types of visualization PLOTs:
 
 	 histogram	pca	violin 
 
-  Example:
+   Example:
 
 	./rugplots.R template --plot violin --file myviolin_params.json
 
-  options:
+   options:
     -h, --help            show this help message and exit
     -o, --overwrite       Overwrite JSON template file
     -p PLOT, --plot PLOT  One of the available visualization PLOTs
     -d, --description     Display details of the parameters in the template
     -f FILE, --file FILE  Filename to save the JSON template
 
-As shown in the ``usage`` line, this subcommand requires the ``--plot
+As shown in the ``usage`` line , this subcommand requires the ``--plot
 PLOT`` argument, without any other argument, a `PLOT_params.json` file
 is generated. Where ``PLOT`` is one of the available visualization
-plots. This JSON file contains the default values of the visualization
-plot parameters. However, required parameters identified between angle
-brackets ``<>`` must be provided.
+plots.
+
+The following command will create a `my_violin_params.json` file for a
+`violin` plot:
+
+.. code-block:: console
+   :emphasize-lines: 2
+
+   docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+   template -p violin -f my_violin_params.json
+
+The ``-f`` argument indicates that it will create the json file and
+the ``-p`` argument indicates that it will be a `violin` plot
+template. This JSON file contains the default values of the
+visualization plot parameters. However, required parameters identified
+between angle brackets ``<>`` must be provided.
+
+
+
 
 .. note::
 
@@ -142,7 +186,7 @@ brackets ``<>`` must be provided.
    colon and the `name/value` pairs are separated by `,` comma.
 
 It is expected that the name/value pairs to be intuitive for the
-users. In other case, the optional argument ``-d`` or ``-description``
+users. In other case, the optional argument ``-d`` or ``--description``
 will display additional details about the pairs in a `JSON Schema
 <https://json-schema.org/understanding-json-schema/reference/index.html>`_
 including description, type and default values. For example, the
@@ -150,7 +194,7 @@ following command will display the JSON schema for a violin plot::
 
   docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
 
-In the output of command, the ``device`` property shows the
+In the output of the command, the ``device`` property shows the
 information in the box below, where ``"enum"`` indicates the possible
 output formats.
 
@@ -165,16 +209,46 @@ output formats.
 	"default": "pdf"
    },
 
-The ``plot`` SUBCOMMAND
-+++++++++++++++++++++++
+.. _plot-lab:
 
-The `plot` command
+The ``plot`` subcommand
+~~~~~~~~~~~~~~~~~~~~~~~
 
+The `plot` subcommand is used in the third and last step to create
+visualizations using the ``rugplot`` container. The ``--help`` option
+shows the usage, description, available PLOTs and an usage example.
 
+.. code-block:: console
 
+	docker run --rm venustiano/rugplot:0.1.0 plot --help
 
-A brief description of the `name/value` pairs that could be in the
-JSON file are displayed in the `Arguments` section.
+As a result:
+	
+.. code-block:: console
+
+	usage: /app/bin/rugplots.R plot [-h] -p PLOT -f FILE [-v]
+
+	This command creates visualization PLOTs using a JSON template. 
+	The data and attributes of the PLOT are defined in such a template. 
+	The following PLOTs are available: 
+
+		histogram	pca	violin 
+
+	Example:
+
+		./rugplots.R plot --plot violin --file myviolin_params.json
+
+	options:
+		-h, --help            show this help message and exit
+		-p PLOT, --plot PLOT  One of the available PLOTs
+		-f FILE, --file FILE  JSON template filename
+		-v, --verbose         Print extra output
+
+The first line in the result ``usage`` shows that this subcommand
+requires two positional arugments ``-p`` or ``--plot`` followed by the
+type of plot to be created and and ``-f`` or ``--file`` followed by
+the JSON file created using the ``template`` subcommand (see the
+:ref:`template-lab` section).
 
 
 The `names` in the JSON file are between double quotes and the
