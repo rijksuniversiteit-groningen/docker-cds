@@ -22,12 +22,25 @@ be created in the second step to create the histogram.
 Creating violin plots using the ``rugplot`` container
 *****************************************************
 
+For simplicity it is better to create an ``alias``, see the
+:ref:`docker-lab` section.
+
 #. Step 1, create a `rugplot violin`` JSON template
 
-   .. code-block:: console
+   .. tabs::
 
-	docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-	template -p violin
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot template -p violin
+
+      .. tab:: raw command
+	       
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	    template -p violin
 
    A ``violin_params.json`` file will be created including some of
    the `name/value` pairs listed below:
@@ -77,10 +90,20 @@ Creating violin plots using the ``rugplot`` container
 
 #. Step 3, create the violin plots
 
-   .. code-block:: console
+   .. tabs::
 
-      docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-      plot -p violin --file violin_params.json
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot plot -p violin --file violin_params.json
+
+      .. tab:: raw command
+   
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	    plot -p violin --file violin_params.json
 
    The result as follows
 

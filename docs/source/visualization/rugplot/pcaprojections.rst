@@ -19,12 +19,28 @@ the following command
 or by adding the link in the previous command to the JSON template
 that will be created in the second step to create the PCA projection.
 
+Creating a PCA projection plot using the ``rugplot`` container
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+For simplicity it is better to create an ``alias``, see the
+:ref:`docker-lab` section.
+
 #. Step 1, create a `rugplot` PCA projection template
 
-   .. code-block:: console
+   .. tabs::
 
-	docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-	template --plot pca 
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot template --plot pca
+
+      .. tab:: raw command
+	    
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	    template --plot pca 
 
    A ``pca_projection_params.json`` file will be created including some of
    the `name/value` pairs listed below:
@@ -65,10 +81,20 @@ that will be created in the second step to create the PCA projection.
 
 #. Step 3, create the PCA projection plot
 
-   .. code-block:: console
+   .. tabs::
 
-      docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-      plot --plot pca --file pca_projection_params.json
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot --plot pca --file pca_projection_params.json
+
+      .. tab:: raw command
+   
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	    plot --plot pca --file pca_projection_params.json
 
    The result will be stored in the ``Rplots.pdf`` file.
 

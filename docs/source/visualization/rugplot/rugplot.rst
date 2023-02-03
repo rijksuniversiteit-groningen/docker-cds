@@ -26,10 +26,22 @@ the CLI. The commands have two parts, the `Docker` and the
 Docker commands
 +++++++++++++++
 
-The Docker part will be most of the time as follows::
+The Docker part will be most of the time as follows:
 
-  docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0
+.. tabs::
 
+   .. tab:: linux
+	    
+      .. code-block:: console
+		
+         docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0
+
+   .. tab:: Powershell
+	    
+      .. code-block:: console
+		
+         docker run --rm -v ${PWD}:/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0
+      
 The command will download the Docker image
 ``venustiano/rugplot:0.1.0`` from DockerHub if it is not in the
 computer host. The ``--rm`` flag will remove the container when the
@@ -42,6 +54,38 @@ visualizations.
 
    Running the command ``ls`` will display the files in the working
    directory
+
+The ``-u $(id -u):$(id -g)`` argument will give the
+ownership of the results to the current user.
+
+The ``rugplot`` alias
+~~~~~~~~~~~~~~~~~~~~~
+
+As this is a `long` and `complex` command, it is a good idea to create
+an alias. An ``alias`` is a simplified way to reference another
+command. `Aliases <https://linuxhandbook.com/linux-alias-command/>`_
+can be created under ``*nix`` operating systems:
+
+
+.. tabs::
+
+   .. tab:: linux
+
+      .. code-block:: console
+
+	  alias rugplot='docker run --rm -v "$PWD":/app/data \
+                        -u $(id -u):$(id -g) venustiano/rugplot:0.1.0'
+   .. tab:: Powershell
+   
+      .. todo::
+
+          Write command to `create alias in Powershell
+          <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7.3>`_.
+
+.. note::
+
+   This alias is temporary. If you exit the shell, you’ll lose the
+   alias. You need to make the alias permanent.
 
 .. note::
 
@@ -62,11 +106,22 @@ characters in the command descriptions.
 - Ellipsis (...), indicate repetition or multiple values or arguments.
 
 The command
-::
 
-   docker run --rm venustiano/rugplot:0.1.0
+.. tabs::
 
-will display information to create visualizations in three steps:
+   .. tab:: alias
+
+      .. code-block:: console
+
+	 rugplot
+
+   .. tab:: raw command
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0
+   
+will display information to create visualizations:
 
 .. code-block:: console
    :emphasize-lines: 1
@@ -126,10 +181,22 @@ The ``template`` subcommand
 The `template` subcommand is used to create a JSON template in the
 first step to create a visualization plot using the `rugplot`
 container. The subcommand options can be found using the ``--help``
-argument::
+argument:
 
-  docker run --rm venustiano/rugplot:0.1.0 template --help
+.. tabs::
 
+   .. tab:: alias
+
+      .. code-block:: console
+
+	 rugplot template --help
+
+   .. tab:: raw command
+
+      .. code-block:: console
+
+ 	 docker run --rm venustiano/rugplot:0.1.0 template --help
+		      
 Usage, types of visualizations available and an example will also be
 displayed:
 
@@ -161,11 +228,21 @@ generated. Where ``PLOT`` is one of the available visualization plots.
 The following `docker/rugplot` command will create a
 `my_violin_params.json` file for a `violin` plot:
 
-.. code-block:: console
-   :emphasize-lines: 2
+.. tabs::
 
-   docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
-   template -p violin -f myviolin_params.json
+   .. tab:: alias
+
+      .. code-block:: console
+
+         rugplot template -p violin -f myviolin_params.json
+
+   .. tab:: raw command
+	    
+      .. code-block:: console
+         :emphasize-lines: 2
+
+	 docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	 template -p violin -f myviolin_params.json
 
 The first part of the command (docker) runs a
 `venustiano/rugplot:0.1.0` container and will be the same for all the
@@ -201,9 +278,21 @@ other case, the optional argument ``-d`` or ``--description`` will
 display additional details about the pairs in a `JSON Schema
 <https://json-schema.org/understanding-json-schema/reference/index.html>`_
 including description, type and default values. For example, the
-following command will display the JSON schema for a violin plot::
+following command will display the JSON schema for a violin plot:
 
-  docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
+.. tabs::
+
+   .. tab:: alias
+
+      .. code-block:: console
+
+	 rugplot template -p violin -d
+
+   .. tab:: raw command
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
 
 In the output of the command, the ``device`` property shows the
 information in the box below, where ``"enum"`` indicates the possible
@@ -231,9 +320,19 @@ The `plot` subcommand is used in the third and last step to create
 visualizations using the ``rugplot`` container. The ``--help`` option
 shows the usage, description, available PLOTs and an usage example.
 
-.. code-block:: console
+.. tabs::
 
-	docker run --rm venustiano/rugplot:0.1.0 plot --help
+   .. tab:: alias
+
+      .. code-block:: console
+
+	 rugplot plot --help
+
+   .. tab:: raw command
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0 plot --help
 
 As a result:
 	
@@ -265,10 +364,20 @@ the JSON file created using the ``template`` subcommand (see the
 :ref:`template-lab` section). The command to create a visualization
 would be as follows:
 
-.. code-block:: console
+.. tabs::
 
-   docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
-   plot -p violin -f myviolin_params.json
+   .. tab:: alias
+
+      .. code-block:: console
+
+	 rugplot plot -p violin -f myviolin_params.json
+
+   .. tab:: raw command
+	    
+      .. code-block:: console
+
+	 docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	 plot -p violin -f myviolin_params.json
 
 
 ``rugplot`` file format output

@@ -19,12 +19,25 @@ be created in the second step to create the histogram.
 Creating a histogram using the ``rugplot`` container
 ****************************************************
 
+For simplicity it is better to create an ``alias``, see the
+:ref:`docker-lab` section.
+
 #. Step 1, create a `rugplot` histogram template
 
-   .. code-block:: console
+   .. tabs::
 
-	docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-	template -p histogram
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot template -p histogram
+
+      .. tab:: raw command
+   
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+	    template -p histogram
 
    A ``histogram_params.json`` file will be created including some of
    the `name/value` pairs listed below:
@@ -60,10 +73,20 @@ Creating a histogram using the ``rugplot`` container
 
 #. Step 3, create the histogram
 
-   .. code-block:: console
+   .. tabs::
 
-      docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-      plot -p histogram --file histogram_params.json
+      .. tab:: alias
+
+	 .. code-block:: console
+
+	    rugplot plot -p histogram --file histogram_params.json
+
+      .. tab:: raw command
+	       
+	 .. code-block:: console
+
+	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+            plot -p histogram --file histogram_params.json
 
    The result will be stored in the ``Rplots.pdf`` file.
 

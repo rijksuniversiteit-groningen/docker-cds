@@ -41,7 +41,7 @@ html_theme_options = {
 }
 
 extensions = ["myst_parser",
-              "sphinx_copybutton",'sphinx.ext.todo','sphinxcontrib.bibtex']
+              "sphinx_copybutton",'sphinx.ext.todo','sphinxcontrib.bibtex', 'sphinx_tabs.tabs']
 bibtex_bibfiles = ['refs.bib']
 source_suffix = {
     ".rst": "restructuredtext",
