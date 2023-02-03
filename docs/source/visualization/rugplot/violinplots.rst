@@ -99,40 +99,52 @@ Creating violin plots using the ``rugplot`` container
       names ``highway-mpg`` and ``body_style`` to ``highwaympg`` and
       ``bodystyle`` in the ``autos.csv`` file.
 
-   .. figure:: ../../_static/Rplots.png-1.png
-	       :height: 400
-	       :alt: pca projection result
-   
-   
-Customizing the histogram
-*************************
+   After changing the column names in the ``autos.csv`` file,
+   updating the JSON file as follows
 
-Different ttributes can be customized such as other labels, colours
-and file format. For example, adding the values below (to save space,
-only the updated ``name/value`` are listed) in
-``histogram_params.json``
+   .. code-block:: json
+
+      {
+          "filename": "autos.csv",
+	  "y_variable": "highwaympg",
+	  "x_variable": "bodystyle",
+	  "colour": "bodystyle",
+	  "fill": "bodystyle",
+      }
+
+   and running the command in step 3 a `png` file with name like
+   ``autos.csv-violin-20230203_121603.366.png`` will be saved.
+      
+   .. figure:: ../../_static/autos.csv-violin-20230203_121603.366.png
+	       :height: 400
+	       :alt: autos violin plot
+
+A last example in this section is the creation of `tikz LaTeX
+<https://texample.net/tikz/examples/feature/plotting/>`_ quality plots
+including a LaTeX formula, using the ``tikzDevice`` R package. The
+``tikz`` version of the previous looks as follows:
+   
+   .. figure:: ../../_static/autos.csv-violin-tikz.png
+	       :alt: violin tikz example
+
+The changes to the JSON template are the following:
 
 .. code-block:: json
 
-    "colour": "class",
-    "labels": {
-        "x": "Sepal length",
-    },
-    "save": {
-        "save": true,
-        "outputfilename": "sepal-length_histogram.png",
-        "device": "png",
-    }
+   {
+	"labels": {
+	    "title": "A \\\\\\\\LaTeX formula in the $x$ axis label",
+            "x": "$p(x)=\\\\\\\\frac{1}{\\\\\\\\sqrt{2\\\\\\\\pi}}e^{-\\\\\\\\frac{x^2}{2}}$",
+	}
+       "save": {
+           "device": "tikz",
+           "sanitize": false
+       }
+   }
 
-and running the ``exactly same`` command in step 3 will produce the
-following visualization stored in a ``png`` file.
+and finally, run the command in step 3 again.
 
-   .. figure:: ../../_static/sepal-length_histogram.png
-	       :alt: pca projection result
+.. note::
 
-The `png` file has the default size 10x15 cm (height/width) and 72
-dots per inch. These properties can be changed in the ``"save"``
-attributes of the JSON file.
-
-Other properties can also be added such as facets, interactive plots
-and LaTeX tikDevice plots.
+   LaTeX commands have to be escaped using ``eight`` backslashes and the
+   ``"sanitize"`` must be set to ``false``.
