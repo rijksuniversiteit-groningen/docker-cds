@@ -20,7 +20,7 @@ For example,
 2) Open the template and fill in the following name/value pairs
 
 \t\"filename\": \"iris.csv\",
-\t\"colour\": \"species\",
+\t\"colour\": \"class\",
 
 3) Create the PCA visualization 'plot' which will be stored in Rplots.pdf
 
