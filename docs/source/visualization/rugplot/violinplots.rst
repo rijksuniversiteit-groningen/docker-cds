@@ -42,6 +42,13 @@ For simplicity it is better to create an ``alias``, see the
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	    template -p violin
 
+      .. tab:: PowerShell
+	       
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    template -p violin
+	    
    A ``violin_params.json`` file will be created including some of
    the `name/value` pairs listed below:
 
@@ -105,6 +112,13 @@ For simplicity it is better to create an ``alias``, see the
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	    plot -p violin --file violin_params.json
 
+      .. tab:: PowerShell
+   
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    plot -p violin --file violin_params.json
+
    The result as follows
 
    .. error::
@@ -146,6 +160,8 @@ A last example in this section is the creation of `tikz LaTeX
 <https://texample.net/tikz/examples/feature/plotting/>`_ quality plots
 including a LaTeX formula, using the ``tikzDevice`` R package. The
 ``tikz`` version of the previous looks as follows:
+
+   .. _tikz figure:
    
    .. figure:: ../../_static/autos.csv-violin-tikz.png
 	       :alt: violin tikz example

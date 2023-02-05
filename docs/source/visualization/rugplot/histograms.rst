@@ -39,6 +39,13 @@ For simplicity it is better to create an ``alias``, see the
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	    template -p histogram
 
+      .. tab:: PowerShell
+   
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    template -p histogram
+
    A ``histogram_params.json`` file will be created including some of
    the `name/value` pairs listed below:
 
@@ -86,6 +93,13 @@ For simplicity it is better to create an ``alias``, see the
 	 .. code-block:: console
 
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
+            plot -p histogram --file histogram_params.json
+
+      .. tab:: PowerShell
+	       
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
             plot -p histogram --file histogram_params.json
 
    The result will be stored in the ``Rplots.pdf`` file.
