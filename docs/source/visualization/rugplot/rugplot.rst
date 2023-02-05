@@ -36,11 +36,11 @@ The Docker part will be most of the time as follows:
 		
          docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0
 
-   .. tab:: Powershell
+   .. tab:: PowerShell
 	    
       .. code-block:: console
 		
-         docker run --rm -v ${PWD}:/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0
+         docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0
       
 The command will download the Docker image
 ``venustiano/rugplot:0.1.0`` from DockerHub if it is not in the
@@ -79,13 +79,15 @@ can be created under ``*nix`` operating systems:
    
       .. todo::
 
-          Write command to `create alias in Powershell
-          <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7.3>`_.
+          `Write a function
+          <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.3>`_,
+          as aliases can not have arguments in PowerShell.
 
 .. note::
 
    This alias is temporary. If you exit the shell, you’ll lose the
-   alias. You need to make the alias permanent.
+   alias. If you want to make the alias permanent, follow this
+   `link <https://linuxhandbook.com/linux-alias-command/>`_.
 
 .. note::
 
@@ -120,7 +122,13 @@ The command
       .. code-block:: console
 
 	 docker run --rm venustiano/rugplot:0.1.0
-   
+
+   .. tab:: PowerShell
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0
+	 
 will display information to create visualizations:
 
 .. code-block:: console
@@ -196,7 +204,13 @@ argument:
       .. code-block:: console
 
  	 docker run --rm venustiano/rugplot:0.1.0 template --help
-		      
+
+   .. tab:: PowerShell
+
+      .. code-block:: console
+
+ 	 docker run --rm venustiano/rugplot:0.1.0 template --help
+	 
 Usage, types of visualizations available and an example will also be
 displayed:
 
@@ -244,6 +258,14 @@ The following `docker/rugplot` command will create a
 	 docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	 template -p violin -f myviolin_params.json
 
+   .. tab:: PowerShell
+	    
+      .. code-block:: console
+         :emphasize-lines: 2
+
+	 docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+	 template -p violin -f myviolin_params.json
+	 
 The first part of the command (docker) runs a
 `venustiano/rugplot:0.1.0` container and will be the same for all the
 plots created with ``rugplot``, except when running a different
@@ -294,6 +316,12 @@ following command will display the JSON schema for a violin plot:
 
 	 docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
 
+   .. tab:: PowerShell
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
+
 In the output of the command, the ``device`` property shows the
 information in the box below, where ``"enum"`` indicates the possible
 output formats.
@@ -334,6 +362,12 @@ shows the usage, description, available PLOTs and an usage example.
 
 	 docker run --rm venustiano/rugplot:0.1.0 plot --help
 
+   .. tab:: PowerShell
+
+      .. code-block:: console
+
+	 docker run --rm venustiano/rugplot:0.1.0 plot --help
+	 
 As a result:
 	
 .. code-block:: console
@@ -379,6 +413,13 @@ would be as follows:
 	 docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	 plot -p violin -f myviolin_params.json
 
+   .. tab:: PowerShell
+	    
+      .. code-block:: console
+
+	 docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+	 plot -p violin -f myviolin_params.json
+	 
 
 ``rugplot`` file format output
 ++++++++++++++++++++++++++++++
@@ -413,11 +454,13 @@ using the "iris.csv" data file would be saved in the following file:
 
   iris.csv-violin-20230130_173149.929.pdf
 
-The visualization formats that be created can be found in the JSON
-schemas for each visualization plot, as shown in the :ref:`device-lab`
-box. The ``html`` file format creates an interactive visualization
-using ggplotly and the ``tikz`` device option produces high quality LaTeX
-visualizations using the ``tikzDevice`` R package.
+The visualization formats that can be created using the ``rugplot``
+container can be found in the JSON schemas for each visualization
+plot, as shown in the :ref:`device-lab` box. The ``html`` file format
+creates an interactive visualization using ggplotly (for instance,
+this :ref:`interactive-lab`) and the ``tikz`` device option
+produces high quality LaTeX visualizations using the ``tikzDevice`` R
+package (for instance this :ref:`Figure <tikz figure>`).
    
 Singularity
 ***********

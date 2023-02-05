@@ -42,6 +42,13 @@ For simplicity it is better to create an ``alias``, see the
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	    template --plot pca 
 
+      .. tab:: PowerShell
+	    
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    template --plot pca 	    
+	    
    A ``pca_projection_params.json`` file will be created including some of
    the `name/value` pairs listed below:
 
@@ -96,6 +103,13 @@ For simplicity it is better to create an ``alias``, see the
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
 	    plot --plot pca --file pca_projection_params.json
 
+      .. tab:: PowerShell
+   
+	 .. code-block:: console
+
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    plot --plot pca --file pca_projection_params.json
+	    
    The result will be stored in the ``Rplots.pdf`` file.
 
    .. figure:: ../../_static/iris.csv-pca-20221027_210622.png
@@ -106,7 +120,9 @@ For simplicity it is better to create an ``alias``, see the
 Interactive plots using ``plotly``
 
    .. code-block:: json
-
+      :caption: ``Interactive plot``
+      :name: interactive-lab
+	   
       {
 	  "labels": {
 	      "title": "Interactive iris PCA projection",
@@ -120,5 +136,5 @@ Interactive plots using ``plotly``
  The result
 
  .. raw:: html
-	 
+
 	 <iframe src="../../_static/iris.csv-pca-20221028_074618.html" height="400px" width="90%"></iframe>
