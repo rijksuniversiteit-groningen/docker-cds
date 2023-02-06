@@ -12,10 +12,21 @@ be downloaded directly from `DataHub autos
 <https://datahub.io/machine-learning/autos>`_, by running the
 following command
 
-.. code-block:: console
+.. tabs::
 
-   wget https://datahub.io/machine-learning/autos/r/autos.csv
+   .. tab:: Linux
 
+	    .. code-block:: console
+
+			    wget https://datahub.io/machine-learning/autos/r/autos.csv
+
+   .. tab:: PowerShell
+
+	    .. code-block:: powershell
+
+	       Invoke-WebRequest https://datahub.io/machine-learning/autos/r/autos.csv -OutFile autos.csv
+
+   
 or by adding the link in the previous command to the JSON template that will
 be created in the second step to create the histogram.
 
@@ -44,9 +55,9 @@ For simplicity it is better to create an ``alias``, see the
 
       .. tab:: PowerShell
 	       
-	 .. code-block:: console
+	 .. code-block:: powershell
 
-	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 	    template -p violin
 	    
    A ``violin_params.json`` file will be created including some of
@@ -114,9 +125,9 @@ For simplicity it is better to create an ``alias``, see the
 
       .. tab:: PowerShell
    
-	 .. code-block:: console
+	 .. code-block:: powershell
 
-	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 	    plot -p violin --file violin_params.json
 
    The result as follows

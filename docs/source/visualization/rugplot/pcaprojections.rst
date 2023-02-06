@@ -12,9 +12,19 @@ to create such examples. The dataset can be downloaded directly from
 `DataHub <https://datahub.io/machine-learning/iris>`_, by running
 the following command
 
-.. code-block:: console
+.. tabs::
 
-   wget https://datahub.io/machine-learning/iris/r/iris.csv
+   .. tab:: Linux
+
+	    .. code-block:: console
+
+			    wget https://datahub.io/machine-learning/iris/r/iris.csv
+
+   .. tab:: PowerShell
+
+	    .. code-block:: powershell
+
+	       Invoke-WebRequest https://datahub.io/machine-learning/iris/r/iris.csv -OutFile iris.csv
 
 or by adding the link in the previous command to the JSON template
 that will be created in the second step to create the PCA projection.
@@ -44,9 +54,9 @@ For simplicity it is better to create an ``alias``, see the
 
       .. tab:: PowerShell
 	    
-	 .. code-block:: console
+	 .. code-block:: powershell
 
-	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 	    template --plot pca 	    
 	    
    A ``pca_projection_params.json`` file will be created including some of
@@ -107,7 +117,7 @@ For simplicity it is better to create an ``alias``, see the
    
 	 .. code-block:: console
 
-	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 \
+	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 	    plot --plot pca --file pca_projection_params.json
 	    
    The result will be stored in the ``Rplots.pdf`` file.

@@ -38,7 +38,7 @@ The Docker part will be most of the time as follows:
 
    .. tab:: PowerShell
 	    
-      .. code-block:: console
+      .. code-block:: powershell
 		
          docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0
       
@@ -125,7 +125,7 @@ The command
 
    .. tab:: PowerShell
 
-      .. code-block:: console
+      .. code-block:: powershell
 
 	 docker run --rm venustiano/rugplot:0.1.0
 	 
@@ -207,7 +207,7 @@ argument:
 
    .. tab:: PowerShell
 
-      .. code-block:: console
+      .. code-block:: powershell
 
  	 docker run --rm venustiano/rugplot:0.1.0 template --help
 	 
@@ -219,7 +219,8 @@ displayed:
 
    usage: /app/bin/rugplots.R template [-h] [-o] -p PLOT [-d] [-f FILE]
 
-   Function to save JSON templates for the following types of visualization PLOTs:
+   Function to save JSON templates for the following types of
+   visualization PLOTs:
 
 	 histogram	pca	violin 
 
@@ -260,11 +261,12 @@ The following `docker/rugplot` command will create a
 
    .. tab:: PowerShell
 	    
-      .. code-block:: console
+      .. code-block:: powershell
          :emphasize-lines: 2
 
-	 docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+	 docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 ` 
 	 template -p violin -f myviolin_params.json
+	 
 	 
 The first part of the command (docker) runs a
 `venustiano/rugplot:0.1.0` container and will be the same for all the
@@ -318,9 +320,10 @@ following command will display the JSON schema for a violin plot:
 
    .. tab:: PowerShell
 
-      .. code-block:: console
+      .. code-block:: powershell
 
-	 docker run --rm venustiano/rugplot:0.1.0 template -p violin -d
+	 docker run --rm venustiano/rugplot:0.1.0 `
+	 template -p violin -d
 
 In the output of the command, the ``device`` property shows the
 information in the box below, where ``"enum"`` indicates the possible
@@ -364,7 +367,7 @@ shows the usage, description, available PLOTs and an usage example.
 
    .. tab:: PowerShell
 
-      .. code-block:: console
+      .. code-block:: powershell
 
 	 docker run --rm venustiano/rugplot:0.1.0 plot --help
 	 
@@ -415,9 +418,9 @@ would be as follows:
 
    .. tab:: PowerShell
 	    
-      .. code-block:: console
+      .. code-block:: powershell
 
-	 docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+	 docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 	 plot -p violin -f myviolin_params.json
 	 
 
