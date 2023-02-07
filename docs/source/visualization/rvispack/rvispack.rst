@@ -1,8 +1,7 @@
 Visualizations with rvispack
 ============================
 
-Basics
-------
+`rvispack` is ``obsolete``, see :doc:`../rugplot/rugplot` instead.
 
 Assumptions
 ***********

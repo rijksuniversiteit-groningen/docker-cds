@@ -21,7 +21,7 @@ the following command
 
 	    .. code-block:: powershell
 
-	       Invoke-WebRequest https://datahub.io/machine-learning/iris/r/iris.csv
+	       Invoke-WebRequest https://datahub.io/machine-learning/iris/r/iris.csv -OutFile iris.csv
 
 			    
 or by adding the link in the previous command to the JSON template that will

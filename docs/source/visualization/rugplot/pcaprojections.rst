@@ -1,16 +1,17 @@
 rugplot: PCA Projections
 ========================
 
-A poular technique to visualize the result o Principal Component
+A popular technique to visualize the result of Principal Component
 Analysis (PCA) is by means of projections where data with ``m``
 columns or variables are projected into a subpace with fewer columns,
 typically 2. Here it is shown how to create PCA projections using the
 ``rugplot`` container.
 
-The famous ``iris dataset``, (`Fisher, 1936`) will be used
-to create such examples. The dataset can be downloaded directly from
-`DataHub <https://datahub.io/machine-learning/iris>`_, by running
-the following command
+The famous ``iris dataset``, (`Fisher, 1936`) will be used to create
+such examples. The dataset can be downloaded from different sources
+and in different ways, three of them are: first, visiting `DataHub
+<https://datahub.io/machine-learning/iris>`_, second by running the
+following command
 
 .. tabs::
 
@@ -26,8 +27,9 @@ the following command
 
 	       Invoke-WebRequest https://datahub.io/machine-learning/iris/r/iris.csv -OutFile iris.csv
 
-or by adding the link in the previous command to the JSON template
-that will be created in the second step to create the PCA projection.
+and third, by adding the link in the previous command to the JSON
+template that will be created in the second step for creating a PCA
+projection.
 
 Creating a PCA projection plot using the ``rugplot`` container
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
