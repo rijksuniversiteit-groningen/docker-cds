@@ -61,29 +61,34 @@ For simplicity it is better to create an ``alias``, see the
    the `name/value` pairs listed below:
 
    .. code-block:: json
-      :emphasize-lines: 3, 5, 7
+      :emphasize-lines: 3, 7, 11
 
       {
           "description": "Parameters to create a histogram(s) using the 'rugplot' R package",
 	  "filename": "<filename path>",
 	  "variables": null,
-	  "y_variable": "<required column name>",
+	  "aesthetics": {
+              "y_variable": null,
+              "x_variable": "<X required column name>",
+	      "fill": null,
+          },
 	  "labels": {
 	      "title": null,
 	      "subtitle": null,
 	  },
-	  "...": "...",
       }
 
 #. Step 2, add the ``'data file'``, ``'y variable'`` and the
    ``'title'`` values in the template:
 
    .. code-block:: json
-      :emphasize-lines: 2, 3, 5
+      :emphasize-lines: 2, 4, 7
 
       {
 	  "filename": "https://datahub.io/machine-learning/iris/r/iris.csv",
-	  "y_variable": "sepallength",
+	  "aesthetics": {
+              "x_variable": "sepallength",
+          },
 	  "labels": {
 	      "title": "Sepal length histogram",
 	  },
