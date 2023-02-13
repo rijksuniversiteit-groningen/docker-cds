@@ -27,8 +27,8 @@ command
 or by adding the link in the previous command to the JSON template that will
 be created in the second step to create the histogram.
 
-Creating a histogram using the ``rugplot`` container
-****************************************************
+Creating a scatter plot using the ``rugplot`` container
+*******************************************************
 
 For simplicity it is better to create an ``alias``, see the
 :ref:`docker-lab` section.
@@ -61,16 +61,15 @@ For simplicity it is better to create an ``alias``, see the
    the `name/value` pairs listed below:
 
    .. code-block:: json
-      :emphasize-lines: 3, 7, 11
 
       {
-          "description": "Parameters to create a histogram(s) using the 'rugplot' R package",
+          "description": "Parameters to create a scatter plot using the 'rugplot' R package",
 	  "filename": "<filename path>",
 	  "variables": null,
 	  "aesthetics": {
-              "y_variable": null,
+              "y_variable": "<Y required column name>",
               "x_variable": "<X required column name>",
-	      "fill": null,
+	      "colour": null,
           },
 	  "labels": {
 	      "title": null,
@@ -78,19 +77,20 @@ For simplicity it is better to create an ``alias``, see the
 	  },
       }
 
-#. Step 2, add the ``'data file'``, ``'y variable'`` and the
-   ``'title'`` values in the template:
+#. Step 2, add the ``'data file'``, ``'x and y variables'``,
+   ``'title'``, and ``'colour'`` values in the template:
 
    .. code-block:: json
-      :emphasize-lines: 2, 4, 7
 
       {
 	  "filename": "https://datahub.io/machine-learning/iris/r/iris.csv",
 	  "aesthetics": {
-              "x_variable": "sepallength",
+	      "y_variable": "sepallength",
+              "x_variable": "sepalwidth",
+	      "colour": "class",
           },
 	  "labels": {
-	      "title": "Sepal length histogram",
+	      "title": "width vs length",
 	  },
       }
 
@@ -102,58 +102,25 @@ For simplicity it is better to create an ``alias``, see the
 
 	 .. code-block:: console
 
-	    rugplot plot -p histogram --file histogram_params.json
+	    rugplot plot -p scatter --file scatter_params.json
 
       .. tab:: raw command
 	       
 	 .. code-block:: console
 
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-            plot -p histogram --file histogram_params.json
+            plot -p scatter --file scatter_params.json
 
       .. tab:: PowerShell
 	       
 	 .. code-block:: powershell
 
 	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
-            plot -p histogram --file histogram_params.json
+            plot -p scatter --file scatter_params.json
 
    The result will be stored in the ``Rplots.pdf`` file.
 
-   .. figure:: ../../_static/Rplots.png-1.png
+   .. figure:: ../../_static/scatter_iris.png
 	       :height: 400
-	       :alt: pca projection result
+	       :alt: scatter plot
    
-   
-Customizing the histogram
-*************************
-
-Different ttributes can be customized such as other labels, colours
-and file format. For example, adding the values below (to save space,
-only the updated ``name/value`` are listed) in
-``histogram_params.json``
-
-.. code-block:: json
-
-    "colour": "class",
-    "labels": {
-        "x": "Sepal length",
-    },
-    "save": {
-        "save": true,
-        "outputfilename": "sepal-length_histogram.png",
-        "device": "png",
-    }
-
-and running the ``exactly same`` command in step 3 will produce the
-following visualization stored in a ``png`` file.
-
-   .. figure:: ../../_static/sepal-length_histogram.png
-	       :alt: pca projection result
-
-The `png` file has the default size 10x15 cm (height/width) and 72
-dots per inch. These properties can be changed in the ``"save"``
-attributes of the JSON file.
-
-Other properties can also be added such as facets, interactive plots
-and LaTeX tikDevice plots.
