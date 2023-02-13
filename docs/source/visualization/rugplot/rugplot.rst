@@ -478,5 +478,6 @@ Singularity
    histograms
    violinplots
    pcaprojections
+   scatterplots
    
 

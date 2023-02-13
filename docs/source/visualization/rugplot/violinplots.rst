@@ -68,10 +68,12 @@ For simplicity it is better to create an ``alias``, see the
       {
           "description": "Parameters to create violin plots using the 'rugplot' R package",
 	  "filename": "<filename path>",
-	  "y_variable": "<Y required column name>",
-	  "x_variable": null,
-	  "colour": null,
-	  "fill": null,
+	  "aesthetics": {
+              "y_variable": "<Y required column name>",
+	      "x_variable": "''",
+	      "fill": null,
+	      "colour": null,
+	  },
 	  "boxplot": {
 	      "addboxplot": false,
 	  },
@@ -91,10 +93,12 @@ For simplicity it is better to create an ``alias``, see the
       {
           "description": "Parameters to create violin plots using the 'rugplot' R package",
 	  "filename": "https://datahub.io/machine-learning/autos/r/autos.csv",
-	  "y_variable": "highway-mpg",
-	  "x_variable": "body-style",
-	  "colour": "body-style",
-	  "fill": "body-style",
+	  "aesthetics": {
+              "y_variable": "highway-mpg",
+	      "x_variable": "body-style",
+	      "colour": "body-style",
+	      "fill": "body-style",
+	  },
 	  "boxplot": {
 	      "addboxplot": true,
 	  },
@@ -154,10 +158,12 @@ For simplicity it is better to create an ``alias``, see the
 
       {
           "filename": "autos.csv",
-	  "y_variable": "highwaympg",
-	  "x_variable": "bodystyle",
-	  "colour": "bodystyle",
-	  "fill": "bodystyle",
+	  "aesthetics": {
+              "y_variable": "highwaympg",
+              "x_variable": "bodystyle",
+              "fill": "bodystyle",
+              "colour": "bodystyle",
+	  },	  
       }
 
    and running the command in step 3 a `png` file with name like
@@ -197,4 +203,4 @@ and finally, run the command in step 3 again.
 .. note::
 
    LaTeX commands have to be escaped using ``eight`` backslashes and the
-   ``"sanitize"`` must be set to ``false``.
+   ``"sanitize"`` property must be set to ``false``.

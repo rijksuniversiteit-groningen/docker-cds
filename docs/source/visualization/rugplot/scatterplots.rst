@@ -1,13 +1,13 @@
-rugplot: Histograms
-===================
+rugplot: Scatter plots
+======================
 
-A histogram is commonly used to visualize an approximation of the
-distribution of one-dimensional continuos data. Here some examples are
-given to show how to create histograms using the ``rugplot``
-container. The famous ``iris dataset``, (`Fisher, 1936`) will be used
-to create such examples. The dataset can be downloaded directly from
-`DataHub <https://datahub.io/machine-learning/iris>`_, by running
-the following command
+A scatter plot is commonly used to visualize the relationship between
+two variables. Here some examples are given to show how to create
+scatterplots using the ``rugplot`` container. The famous ``iris
+dataset``, (`Fisher, 1936`) will be used to create such examples. The
+dataset can be downloaded directly from `DataHub
+<https://datahub.io/machine-learning/iris>`_, by running the following
+command
 
 .. tabs::
 
@@ -41,23 +41,23 @@ For simplicity it is better to create an ``alias``, see the
 
 	 .. code-block:: console
 
-	    rugplot template -p histogram
+	    rugplot template -p scatter
 
       .. tab:: raw command
    
 	 .. code-block:: console
 
 	    docker run --rm -v "$PWD":/app/data -u $(id -u):$(id -g) venustiano/rugplot:0.1.0 \
-	    template -p histogram
+	    template -p scatter
 
       .. tab:: PowerShell
    
 	 .. code-block:: powershell
 
 	    docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
-	    template -p histogram
+	    template -p scatter
 
-   A ``histogram_params.json`` file will be created including some of
+   A ``scatter_params.json`` file will be created including some of
    the `name/value` pairs listed below:
 
    .. code-block:: json
