@@ -4,7 +4,6 @@
     journal = {Bioinformatics},
     year = {2022},
     month = {09},
-    abstract = "{Gaussian graphical models (GGMs) are network representations of random variables (as nodes) and their partial correlations (as edges). GGMs overcome the challenges of high-dimensional data analysis by using shrinkage methodologies. Therefore, they have become useful to reconstruct gene regulatory networks from gene-expression profiles. However, it is often ignored that the partial correlations are ‘shrunk’ and that they cannot be compared/assessed directly. Therefore, accurate (differential) network analyses need to account for the number of variables, the sample size, and also the shrinkage value, otherwise, the analysis and its biological interpretation would turn biased. To date, there are no appropriate methods to account for these factors and address these issues.We derive the statistical properties of the partial correlation obtained with the Ledoit–Wolf shrinkage. Our result provides a toolbox for (differential) network analyses as (i) confidence intervals, (ii) a test for zero partial correlation (null-effects) and (iii) a test to compare partial correlations. Our novel (parametric) methods account for the number of variables, the sample size and the shrinkage values. Additionally, they are computationally fast, simple to implement and require only basic statistical knowledge. Our simulations show that the novel tests perform better than DiffNetFDR—a recently published alternative—in terms of the trade-off between true and false positives. The methods are demonstrated on synthetic data and two gene-expression datasets from Escherichia coli and Mus musculus.The R package with the methods and the R script with the analysis are available in https://github.com/V-Bernal/GeneNetTools.Supplementary data are available at Bioinformatics online.}",
     issn = {1367-4803},
     doi = {10.1093/bioinformatics/btac657},
     url = {https://doi.org/10.1093/bioinformatics/btac657},
@@ -29,8 +28,6 @@
 
     month = {05},
 
-    abstract = "{One of the main goals in systems biology is to learn molecular regulatory networks from quantitative profile data. In particular, Gaussian graphical models (GGMs) are widely used network models in bioinformatics where variables (e.g. transcripts, metabolites or proteins) are represented by nodes, and pairs of nodes are connected with an edge according to their partial correlation. Reconstructing a GGM from data is a challenging task when the sample size is smaller than the number of variables. The main problem consists in finding the inverse of the covariance estimator which is ill-conditioned in this case. Shrinkage-based covariance estimators are a popular approach, producing an invertible ‘shrunk’ covariance. However, a proper significance test for the ‘shrunk’ partial correlation (i.e. the GGM edges) is an open challenge as a probability density including the shrinkage is unknown. In this article, we present (i) a geometric reformulation of the shrinkage-based GGM, and (ii) a probability density that naturally includes the shrinkage parameter.Our results show that the inference using this new ‘shrunk’ probability density is as accurate as Monte Carlo estimation (an unbiased non-parametric method) for any shrinkage value, while being computationally more efficient. We show on synthetic data how the novel test for significance allows an accurate control of the Type I error and outperforms the network reconstruction obtained by the widely used R package GeneNet. This is further highlighted in two gene expression datasets from stress response in Eschericha coli, and the effect of influenza infection in Mus musculus.https://github.com/V-Bernal/GGM-ShrinkageSupplementary data are available at Bioinformatics online.}",
-
     issn = {1367-4803},
 
     doi = {10.1093/bioinformatics/btz357},
@@ -41,3 +38,20 @@
 
 }
 
+
+@article{Soancatl-Aguilar2017,
+title = "Visual Data Exploration for Balance Quantification in Real-Time During Exergaming",
+keywords = "POSTURAL INSTABILITY, PARKINSONS-DISEASE, OLDER-PEOPLE, BODY SWAY, STABILITY, PATTERNS, FALLS, PREVENTION, MANAGEMENT, MOVEMENT",
+author = "Soancatl-Aguilar, {Venustiano} and {van de Gronde}, {Jasper J.} and Lamoth, {Claudine J. C.} and {van Diest}, Mike and Maurits, {Natasha M.} and Roerdink, {Jos B. T. M.}",
+year = "2017",
+month = jan,
+day = "30",
+doi = "10.1371/journal.pone.0170906",
+language = "English",
+volume = "12",
+journal = "PLOS-One",
+issn = "1932-6203",
+publisher = "PUBLIC LIBRARY SCIENCE",
+number = "1",
+
+}

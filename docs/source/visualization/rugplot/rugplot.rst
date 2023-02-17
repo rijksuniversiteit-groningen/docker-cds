@@ -479,5 +479,5 @@ Singularity
    violinplots
    pcaprojections
    scatterplots
-   
+   heatmaps
 
