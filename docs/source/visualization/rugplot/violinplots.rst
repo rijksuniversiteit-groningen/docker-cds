@@ -1,7 +1,7 @@
 rugplot: Violin Plots
 =====================
 
-Similar to histograms, violin plos are used to used to visualize an
+Similar to histograms, violin plos are used to visualize an
 approximation of the distribution of one-dimensional continuos
 data. However, instead of showing bars, violin plots adjust a
 probability density function to fit a curve on the histogram, then the
@@ -33,8 +33,9 @@ be created in the second step to create the histogram.
 Creating violin plots using the ``rugplot`` container
 *****************************************************
 
-For simplicity it is better to create an ``alias``, see the
-:ref:`docker-lab` section.
+An ``alias`` can hide the length of the command, see the
+:ref:`docker-lab` section, but copying the ``raw command`` or
+``PowerShell`` is also easy.
 
 #. Step 1, create a `rugplot violin`` JSON template
 
@@ -202,5 +203,7 @@ and finally, run the command in step 3 again.
 
 .. note::
 
-   LaTeX commands have to be escaped using ``eight`` backslashes and the
-   ``"sanitize"`` property must be set to ``false``.
+   LaTeX commands have to be escaped using ``eight`` backslashes and
+   the ``"sanitize"`` property must be set to ``false``. However, in
+   axis breaks only four backslashes are needed, see the heatmap
+   example.
