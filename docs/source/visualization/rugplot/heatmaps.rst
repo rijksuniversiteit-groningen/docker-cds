@@ -128,6 +128,8 @@ For simplicity it is better to create an ``alias``, see the
 #. Step 4, customizing color, label and LaTeX format
 
    .. code-block:: json
+      :caption: ``LaTeX breaks``
+      :name: latexbreaks
 
       {
         "labels": {

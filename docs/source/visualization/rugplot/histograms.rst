@@ -128,7 +128,7 @@ For simplicity it is better to create an ``alias``, see the
 Customizing the histogram
 *************************
 
-Different ttributes can be customized such as other labels, colours
+Different attributes can be customized such as other labels, colours
 and file format. For example, adding the values below (to save space,
 only the updated ``name/value`` are listed) in
 ``histogram_params.json``
