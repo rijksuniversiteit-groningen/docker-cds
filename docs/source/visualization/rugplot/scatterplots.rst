@@ -25,7 +25,7 @@ command
 
 			    
 or by adding the link in the previous command to the JSON template that will
-be created in the second step to create the histogram.
+be created in the second step to create the scatter plot.
 
 Creating a scatter plot using the ``rugplot`` container
 *******************************************************
@@ -33,7 +33,7 @@ Creating a scatter plot using the ``rugplot`` container
 For simplicity it is better to create an ``alias``, see the
 :ref:`docker-lab` section.
 
-#. Step 1, create a `rugplot` histogram template
+#. Step 1, create a `rugplot` scatter template
 
    .. tabs::
 
@@ -94,7 +94,7 @@ For simplicity it is better to create an ``alias``, see the
 	  },
       }
 
-#. Step 3, create the histogram
+#. Step 3, create the scatter plot
 
    .. tabs::
 
