@@ -47,25 +47,44 @@ Download the data.
 wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/master/tests/testthat/data/iris.csv
 ```
 
-Store the JSON object in a `violin_params.json` file.
+#### 1. Create a violin JSON template
+
+##### PowerShell
+
+
+```bash
+docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
+template -p violin
+```
+
+##### Linux
+```bash
+docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+template -p violin
+```
+
+#### 2. Update the following key/value pairs in the `violin_params.json` file as follows:
 
 ```json
 {
 	"filename": "iris.csv",
-	"y_variable": "sepal_length"
+	"aesthetics": {
+	    "y_variable": "sepal_length"
+	}
 }
 ```
 
-
-#### Creating the visualization under Linux or MacOS
+#### Create the visualization under Linux or MacOS
 
 ```bash
-docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 c_violin violin_params.json
+docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+plot -p violin -f violin_params.json
 ```
 
 #### Creating the visualization using Windows powershell
 ```bash
-docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 c_violin violin_params.json
+docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
+plot -p violin -f violin_params.json
 ```
 
 will produce a violin plot in the `Rplots.pdf` file.
@@ -74,18 +93,38 @@ will produce a violin plot in the `Rplots.pdf` file.
 ![Violin plot](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs/source/_static/Rplots.pdf.png)
 
 The `-v` flag mounts the current working directory (`$PWD`) as
-`/app/data` folder in the container and `c_violin` is the function
-name as displayed by the first command.
+`/app/data` folder in the container, `-p violin` is the plot function
+and `-f violin_params.json` is the file that contains the information
+to create the violin plot.
 
 ### Another example
+
+Create a JSON template called `mpg_params.csv`
+
+##### PowerShell
+```bash
+docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
+template -p violin -f mpg_params.json
+```
+
+##### Linux
+```bash
+docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \
+template -p violin -f mpg_params.json
+```
+
+#### 2. Update the following key/value pairs in the `mpg_params.json` file as follows:
 
 ```json
 {
     "filename": "ggplotmpg.csv",
-    "y_variable": "hwy",
-    "x_variable": "class",
-    "colour": "class",
-    "fill": "class",
+    "aesthetics": {
+        "y_variable": "hwy",
+        "x_variable": "class",
+        "factorx": false,
+        "fill": "class",
+        "colour": "class",
+    },
     "rotxlabs": 45,
     "boxplot": {
 		"addboxplot": true,
@@ -100,20 +139,28 @@ name as displayed by the first command.
 }
 ```
 
-#### Download the data and the JSON object
+#### Download the data
 
 ```bash
 wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/master/tests/testthat/data/ggplotmpg.csv
-wget https://raw.githubusercontent.com/rijksuniversiteit-groningen/rvispack/master/tests/testthat/params/mpg_params.json
 ```
 
 #### Create the visualization
 
+##### Linux
 ```bash
-docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 c_violin mpg_params.json
+docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 \ 
+plot -p violin -f  mpg_params.json
 ```
 
-![MPG violin plots](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs/source/_static/ggplotmpg.csv-violin-20221009_203930.png)
+##### PowerShell
+```bash
+docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 ` 
+plot -p violin -f  mpg_params.json
+```
+
+![MPG violin
+plots](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs/source/_static/ggplotmpg.csv-violin-20221009_203930.png)
 
 
 ### Using singularity
@@ -121,9 +168,12 @@ docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 c_violin mpg_params
 ```bash
 singularity build pcr.sif docker://venustiano/rugplot:0.1.0
 ./pcr.sif
-./pcr.sif c_violin mpg_params.json
+./pcr.sif plot -p violin -f mpg_params.json
 ```
 
 ## Contributing
 
-Please see the [Contributor Guide on ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/contributing/contributing.html) for information about how to contribute updates, features, tests and community maintained methods.
+Please see the [Contributor Guide on
+ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/contributing/contributing.html)
+for information about how to contribute updates, features, tests and
+community maintained methods.
