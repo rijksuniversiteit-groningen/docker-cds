@@ -83,7 +83,7 @@ plot -p violin -f violin_params.json
 
 #### Creating the visualization using Windows powershell
 ```bash
-docker run --rm -v "$PWD":/app/data venustiano/rugplot:0.1.0 `
+docker run --rm -v ${PWD}:/app/data venustiano/rugplot:0.1.0 `
 plot -p violin -f violin_params.json
 ```
 
@@ -118,10 +118,13 @@ template -p violin -f mpg_params.json
 ```json
 {
     "filename": "ggplotmpg.csv",
-    "y_variable": "hwy",
-    "x_variable": "class",
-    "colour": "class",
-    "fill": "class",
+    "aesthetics": {
+        "y_variable": "hwy",
+        "x_variable": "class",
+        "factorx": false,
+        "fill": "class",
+        "colour": "class",
+    },
     "rotxlabs": 45,
     "boxplot": {
 		"addboxplot": true,
