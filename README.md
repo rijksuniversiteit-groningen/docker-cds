@@ -168,9 +168,12 @@ plots](https://github.com/rijksuniversiteit-groningen/docker-cds/raw/master/docs
 ```bash
 singularity build pcr.sif docker://venustiano/rugplot:0.1.0
 ./pcr.sif
-./pcr.sif c_violin mpg_params.json
+./pcr.sif plot -p violin -f mpg_params.json
 ```
 
 ## Contributing
 
-Please see the [Contributor Guide on ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/contributing/contributing.html) for information about how to contribute updates, features, tests and community maintained methods.
+Please see the [Contributor Guide on
+ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/contributing/contributing.html)
+for information about how to contribute updates, features, tests and
+community maintained methods.
