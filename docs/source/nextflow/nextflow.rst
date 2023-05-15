@@ -32,7 +32,7 @@ script should be written as follows:
      rugplotviz | view { it.trim() }
    }
 
-Not that the latter two ``$`` in the docker command are escaped. See
+Note that the latter two ``$`` in the docker command are escaped. See
 the Nextflow `documentation
 <https://www.nextflow.io/docs/latest/process.html#>`_ for further
 details.
