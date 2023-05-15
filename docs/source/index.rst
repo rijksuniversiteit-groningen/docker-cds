@@ -21,6 +21,7 @@ RUG Docker-CDS Containerized Data Science
 
    visualization/visualization
    papers/papers
+   nextflow/nextflow
 	     
 .. toctree::
    :maxdepth: 3
