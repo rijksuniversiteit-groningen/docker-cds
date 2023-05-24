@@ -35,7 +35,7 @@ https://docker-cds.readthedocs.io/en/latest/visualization/rugplot/rurgplot.html
 for further examples and details.
 "
 
-parser <- ArgumentParser(formatter_class= 'argparse.RawTextHelpFormatter', description = gdesc)
+parser <- ArgumentParser(formatter_class= 'argparse.RawTextHelpFormatter', description = cat(gdesc))
 
 subparsers <- parser$add_subparsers(dest='func')
 
@@ -47,7 +47,7 @@ desc_temp <- paste("Function to save JSON templates for the following types of v
                   paste(list_rugplots(),collapse = '\t'), example)
 
 template_parser <- subparsers$add_parser('template', formatter_class= 'argparse.RawTextHelpFormatter',
-                                         description = desc_temp)
+                                         description = cat(desc_temp))
 template_parser$add_argument('-o','--overwrite', action="store_true",
                         help = 'Overwrite JSON template file')
 template_parser$add_argument('-p','--plot', type="character", required = TRUE,
@@ -67,7 +67,7 @@ example <- "\n\nExample:\n\n\t./rugplots.R plot --plot violin --file myviolin_pa
 desc_plot <- paste(desc_plot,"\n\n\t",paste(list_rugplots(),collapse = '\t'), example)
 
 plot_parser <- subparsers$add_parser('plot', formatter_class= 'argparse.RawTextHelpFormatter',
-                                     description = desc_plot)
+                                     description = cat(desc_plot))
 plot_parser$add_argument('-p','--plot', type="character", required = TRUE,
                            help = 'One of the available PLOTs')
 plot_parser$add_argument('-f','--file', type="character", required = TRUE,
