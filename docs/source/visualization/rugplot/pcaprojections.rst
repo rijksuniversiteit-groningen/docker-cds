@@ -106,7 +106,7 @@ For simplicity it is better to create an ``alias``, see the
 
 	 .. code-block:: console
 
-	    rugplot --plot pca --file pca_projection_params.json
+	    rugplot plot --plot pca --file pca_projection_params.json
 
       .. tab:: raw command
    
