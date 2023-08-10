@@ -28,7 +28,7 @@ or by adding the link in the previous command to the JSON template that will
 be created in the second step to create the heatmap.
 
 Creating a heatmap using the ``rugplot`` container
-*******************************************************
+**************************************************
 
 For simplicity it is better to create an ``alias``, see the
 :ref:`docker-lab` section.
@@ -170,3 +170,4 @@ References
 
 .. bibliography::
    :filter: docname in docnames
+
