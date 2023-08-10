@@ -164,10 +164,11 @@ For simplicity it is better to create an ``alias``, see the
 	       :height: 250
 	       :alt: heatmaptikz
    
-   
-References
-++++++++++
+..
+  References
+  ++++++++++
 
-.. bibliography::
-   :filter: docname in docnames
+..
+  c.. bibliography::
+  c   :filter: docname in docnames
 
