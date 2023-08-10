@@ -5,7 +5,7 @@ A heatmap is typically a rectangular tiling of a color-shaded data
 matrix. Additionally, this technique is one of the most
 space-efficient ways to visualize data. Here some examples are given
 to show how to create heatmaps using the ``rugplot`` container. The
-exergaming dataset from :cite:t:`Soancatl-Aguilar2017`) will be used
+exergaming dataset from :cite:t:`Soancatl-Aguilar2017` will be used
 to create such examples. The dataset can be downloaded by running the
 following command
 
@@ -164,11 +164,15 @@ For simplicity it is better to create an ``alias``, see the
 	       :height: 250
 	       :alt: heatmaptikz
    
-..
-  References
-  ++++++++++
 
-..
-  c.. bibliography::
-  c   :filter: docname in docnames
+References
+++++++++++
 
+.. bibliography::
+   :filter: False
+
+   Soancatl-Aguilar2017
+..
+   c   :filter: docname in docnames
+
+  

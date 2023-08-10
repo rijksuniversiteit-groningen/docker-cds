@@ -221,4 +221,7 @@ References
 ==========
 
 .. bibliography::
-   :filter: docname in docnames
+   :filter: False
+
+   2022:bernal
+   10.1093/bioinformatics/btz357
