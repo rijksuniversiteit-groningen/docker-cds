@@ -20,7 +20,7 @@ programming skills``. It is assumed that you have `Docker
 Reproducible results
 ====================
 
-From the time being, two figures can be reproduced with the
+For the time being, two figures can be reproduced with the
 `GeneNetTools` container ``Figure 2 (b)`` and ``Figure 3``.
 
 Figure 2 (b). Partial correlations plot
