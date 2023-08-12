@@ -475,6 +475,7 @@ Singularity
 
 .. toctree::
 
+   gui/rugplotgui
    histograms
    violinplots
    pcaprojections
