@@ -13,13 +13,20 @@ Basics
 
 The ``rugplot`` Docker container is a ``user-friendly tool`` to easily
 and quickly generate data visualization plots ``without the need for
-programming skills``. Currently, `rugplot` can be used in two ways,
-via an R package hosted in `this GitHub repository
-<https://github.com/rijksuniversiteit-groningen/rugplot>`_ and a via a
-command line interface (CLI) using Docker containers or
-Singularity. Here it is described the use of ``rugplot`` via
-the CLI. The commands have two parts, the `Docker` and the
-`rugplot`.
+programming skills``. `rugplot` can be used in three ways, via an R
+package hosted in `this GitHub repository
+<https://github.com/rijksuniversiteit-groningen/rugplot>`_, via a
+command line interface (CLI) using Docker or Apptainer, and by means
+of a graphical user interface.
+
+As ``rugplot`` is implemented using ggplot2, it is inline with the
+concept of `The Grammar of Graphics
+<https://bookdown.org/alhdzsz/data_viz_ir/ggbasics.html>`_. Thus,
+elements such as ``Data``, ``Aesthetics`` and ``Facets`` are
+considered in the creation of plots.
+
+Here it is described the use of ``rugplot`` via the CLI. The commands
+have two parts, the `Docker` and the `rugplot`.
 
 .. _docker-lab:
 

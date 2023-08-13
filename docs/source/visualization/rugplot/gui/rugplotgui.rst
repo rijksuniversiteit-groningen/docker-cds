@@ -2,22 +2,30 @@
 rugplot: GUI
 ============
 
-rugplot GUI is a graphical user interface for the rugplot R package.
+The ``rugplot`` GUI is a set of forms to facilitate a user friendly
+interface to create reproducible visualization using the `rugplot
+<https://github.com/rijksuniversiteit-groningen/rugplot>`_ R
+package. Each of these forms display fields according to the
+associated visualization technique. Based on the concept of ``The
+Grammar of Graphics``, these fields can represent elements such as
+``Aesthetics``, ``Attributes`` or ``Facets``.
 
-Documentation
-*************
+``Aesthetics``, always represent categorical or numeric variables
+meaning that a column name must be provided for this fields.
 
-The screenshot below shows the main controls of the GUI.
+``Attributes``, always represent constant values such as numbers or
+strings. Numbers can represent point size or angles and strings can
+represent labels.
 
-.. figure:: ../../../_static/gui_rugplot_initial_screen.png
-	       :alt: gui rugplot initial screen
+``Facets``, always are represented by a categorical variable (column name).
 
-Currently, there are 5 visualization techniques implemented: pca, scatterplots, histograms, PCA projections and heatmaps.
+.. toctree::
+   :maxdepth: 2
+   :caption: Visualization techniques:
 
-The reproducible button is not implemented yet, but it will create a package including, parameters, data and the command to reproduce the results in different platforms such as Windows, MACOS and Linux.
+   histograms
+   pca
+   scatter
+   violin
+   heatmaps
 
-The RDMS button will store the a pacakage in an iRODS instance. 
-
-.. TODO::
-
-   Document generic jsonschema-rugplot fields.
