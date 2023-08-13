@@ -17,3 +17,7 @@ Currently, there are 5 visualization techniques implemented: pca, scatterplots, 
 The reproducible button is not implemented yet, but it will create a package including, parameters, data and the command to reproduce the results in different platforms such as Windows, MACOS and Linux.
 
 The RDMS button will store the a pacakage in an iRODS instance. 
+
+.. TODO::
+
+   Document generic jsonschema-rugplot fields.

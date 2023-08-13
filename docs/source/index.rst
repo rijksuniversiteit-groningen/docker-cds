@@ -19,6 +19,7 @@ RUG Docker-CDS Containerized Data Science
    :maxdepth: 3
    :caption: Contents:
 
+   reusable_techniques
    visualization/visualization
    papers/papers
    nextflow/nextflow

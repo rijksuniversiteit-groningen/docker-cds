@@ -6,17 +6,17 @@
 
 RUG Docker-CDS are a set of containerized data science methods. The
 containers are designed to run as black boxes executed from a command
-line interface. The input of a method is defined in a
-[JSON](https://www.json.org/json-en.html) file including information
-such as the data file, the parameters of the method and the output
-formats.
+line or graphical interface (CLI or GUI). The input of a method is
+defined in a [JSON](https://www.json.org/json-en.html) file including
+information such as the data file, the parameters of the method and
+the output formats.
 
 The [User Guide on
 ReadTheDocs](https://docker-cds.readthedocs.io/en/latest/index.html)
 provides the latest documentation of the containerized data science
 methods.
 
-## Quick Start
+## CLI Quick Start
 
 To run the examples below you need to have [Docker
 installed](https://docs.docker.com/get-docker/).
